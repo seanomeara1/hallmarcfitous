@@ -37,6 +37,7 @@ export default function Footer() {
               <li><Link href="/commercial"  className="hover:text-white transition-colors">Commercial Fitouts</Link></li>
               <li><Link href="/hospitality" className="hover:text-white transition-colors">Hospitality Fitouts</Link></li>
               <li><Link href="/partners"    className="hover:text-white transition-colors">Architect & Designer Partners</Link></li>
+              <li><Link href="/resources"   className="hover:text-white transition-colors">Capability decks (PDF)</Link></li>
             </ul>
           </div>
 

@@ -1,8 +1,8 @@
 import CounterStat from "./CounterStat";
 
 const STATS = [
-  { value: 150, suffix: "+", label: "Projects delivered" },
-  { value: 8,   suffix: "",  label: "Years established" },
+  { value: 750, suffix: "+", label: "Builds delivered" },
+  { value: 22,  suffix: "+", label: "Years owner experience" },
   { value: 5,   suffix: "",  label: "States licensed" },
   { value: 0,   suffix: "",  label: "Site safety incidents" },
 ];
