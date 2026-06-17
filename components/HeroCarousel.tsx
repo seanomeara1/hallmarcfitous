@@ -11,10 +11,10 @@ interface Slide {
 }
 
 const SLIDES: Slide[] = [
-  { src: "/images/terminus.png",         alt: "The Terminus Hotel fitout",         caption: "The Terminus Hotel · Yarrawonga, VIC" },
-  { src: "/images/stylerunner_hero.jpg", alt: "Stylerunner retail fitout",          caption: "Stylerunner · Retail" },
-  { src: "/images/commercial1.jpg",      alt: "DISSH Head Office commercial fitout", caption: "DISSH Head Office · Commercial" },
-  { src: "/images/xo1.jpg",             alt: "X&O retail fitout",                  caption: "X&O · Retail" },
+  { src: "/images/terminus.png",         alt: "The Terminus Hotel fitout",         caption: "The Terminus Hotel — Yarrawonga, VIC" },
+  { src: "/images/stylerunner_hero.jpg", alt: "Stylerunner retail fitout",          caption: "Stylerunner — Retail" },
+  { src: "/images/commercial1.jpg",      alt: "DISSH Head Office commercial fitout", caption: "DISSH Head Office — Commercial" },
+  { src: "/images/xo1.jpg",             alt: "X&O retail fitout",                  caption: "X&O — Retail" },
   { src: "/images/hero2.jpg",            alt: "Hallmarc in-house joinery factory",  caption: "In-house joinery manufacturing" },
 ];
 

@@ -17,16 +17,16 @@ export default function Nav() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-black h-14 flex items-center">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full flex items-center justify-between">
+    <header className="fixed top-0 inset-x-0 z-50 px-4 pt-4">
+      <div className="max-w-7xl mx-auto h-14 pl-4 pr-3 flex items-center justify-between rounded-full bg-black/85 backdrop-blur-md ring-1 ring-white/10 shadow-lg shadow-black/30">
 
         {/* Wordmark */}
         <Link href="/" className="flex items-center gap-2.5">
           <Image
             src="/images/hallmarc-logo-placeholder.png"
-            alt="Hallmarc"
-            width={32}
-            height={32}
+            alt="Hallmarc Fitouts"
+            width={30}
+            height={30}
             className="rounded-sm"
           />
           <span
@@ -35,13 +35,13 @@ export default function Nav() {
           >
             hallmarc
           </span>
-          <span className="text-grey text-[10px] tracking-[0.2em] uppercase self-end mb-0.5 hidden sm:block">
+          <span className="text-white/50 text-[10px] tracking-[0.2em] uppercase self-end mb-1 hidden sm:block">
             Fitouts
           </span>
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-7">
           {NAV_LINKS.map(({ href, label }) => {
             const active = pathname === href || pathname.startsWith(href + "/");
             return (
@@ -49,10 +49,8 @@ export default function Nav() {
                 key={href}
                 href={href}
                 className={[
-                  "text-sm font-medium transition-colors relative pb-0.5",
-                  active
-                    ? "text-terra after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-terra"
-                    : "text-cream3 hover:text-white",
+                  "text-sm font-medium transition-colors relative",
+                  active ? "text-terra" : "text-white/80 hover:text-white",
                 ].join(" ")}
               >
                 {label}
@@ -61,7 +59,7 @@ export default function Nav() {
           })}
           <Link
             href="/#enquire"
-            className="ml-4 bg-terra text-white text-sm font-medium px-5 py-2 rounded-sm hover:bg-terra/90 transition-colors"
+            className="ml-1 bg-terra text-white text-sm font-medium px-5 py-2 rounded-full hover:bg-terra/90 transition-colors"
           >
             Enquire
           </Link>
@@ -81,13 +79,13 @@ export default function Nav() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="absolute top-14 left-0 w-full bg-black border-t border-dark md:hidden">
-          <div className="px-6 py-4 flex flex-col gap-4">
+        <div className="md:hidden mt-2 max-w-7xl mx-auto rounded-2xl bg-black/95 backdrop-blur-md ring-1 ring-white/10 shadow-lg">
+          <div className="px-6 py-5 flex flex-col gap-4">
             {NAV_LINKS.map(({ href, label }) => (
               <Link
                 key={href}
                 href={href}
-                className="text-cream3 text-base font-medium py-1"
+                className="text-white/85 text-base font-medium py-1"
                 onClick={() => setOpen(false)}
               >
                 {label}
@@ -95,7 +93,7 @@ export default function Nav() {
             ))}
             <Link
               href="/#enquire"
-              className="bg-terra text-white text-sm font-medium px-5 py-3 rounded-sm text-center mt-2"
+              className="bg-terra text-white text-sm font-medium px-5 py-3 rounded-full text-center mt-1"
               onClick={() => setOpen(false)}
             >
               Enquire

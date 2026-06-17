@@ -60,6 +60,18 @@ export default function Footer() {
             <p className="text-xs mt-6 text-grey/60">
               Cm3 certified · Zero site safety incidents
             </p>
+
+            <div className="flex items-center gap-4 mt-6">
+              <a href="https://www.instagram.com/hallmarcnationalfitouts/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-grey hover:text-white transition-colors">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r="1" /></svg>
+              </a>
+              <a href="https://www.facebook.com/hallmarcnp/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-grey hover:text-white transition-colors">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-2.9h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.2c-1.2 0-1.6.8-1.6 1.6v1.9h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z" /></svg>
+              </a>
+              <a href="https://www.linkedin.com/company/hallmarc-national-fitouts" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-grey hover:text-white transition-colors">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.7 2.6 4.7 6V21h-4v-5.3c0-1.3 0-2.9-1.8-2.9s-2 1.4-2 2.8V21H9z" /></svg>
+              </a>
+            </div>
           </div>
         </div>
 
