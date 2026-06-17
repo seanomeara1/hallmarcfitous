@@ -10,6 +10,7 @@ const NAV_LINKS = [
   { href: "/commercial",  label: "Commercial" },
   { href: "/hospitality", label: "Hospitality" },
   { href: "/partners",    label: "Partners" },
+  { href: "/resources",   label: "Resources" },
 ];
 
 export default function Nav() {
@@ -50,7 +51,7 @@ export default function Nav() {
                 href={href}
                 className={[
                   "text-sm font-medium transition-colors relative",
-                  active ? "text-terra" : "text-white/80 hover:text-white",
+                  active ? "text-terra" : "text-white hover:text-terra",
                 ].join(" ")}
               >
                 {label}
@@ -85,7 +86,7 @@ export default function Nav() {
               <Link
                 key={href}
                 href={href}
-                className="text-white/85 text-base font-medium py-1"
+                className="text-white text-base font-medium py-1"
                 onClick={() => setOpen(false)}
               >
                 {label}
