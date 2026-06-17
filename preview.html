@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hallmarc National Fitouts — Design Preview</title>
+<style>
+/* ── GT Eesti Fonts ─────────────────────────────────────────── */
+@font-face { font-family:'GT Eesti Display'; src:url('public/fonts/GT-Eesti-Display-Regular.woff2') format('woff2'); font-weight:400; font-display:swap; }
+@font-face { font-family:'GT Eesti Display'; src:url('public/fonts/GT-Eesti-Display-Medium.woff2')  format('woff2'); font-weight:600 700; font-display:swap; }
+@font-face { font-family:'GT Eesti Text';    src:url('public/fonts/GT-Eesti-Text-Light.woff2')      format('woff2'); font-weight:300; font-display:swap; }
+@font-face { font-family:'GT Eesti Text';    src:url('public/fonts/GT-Eesti-Text-Regular.woff2')    format('woff2'); font-weight:400; font-display:swap; }
+@font-face { font-family:'GT Eesti Text';    src:url('public/fonts/GT-Eesti-Text-Medium.woff2')     format('woff2'); font-weight:600 700; font-display:swap; }
+
+/* ── Design Tokens ──────────────────────────────────────────── */
+:root {
+  --cream:  #F5F0E6; --cream2: #EAE5D8; --cream3: #DDD8CE;
+  --black:  #0D0D0D; --terra:  #B5502A; --dark:   #1A1A1A;
+  --grey:   #888880; --white:  #FFFFFF;
+  --display: 'GT Eesti Display', 'Arial Black', sans-serif;
+  --body:    'GT Eesti Text', Calibri, Georgia, serif;
+}
+
+/* ── Reset ──────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+body { background:#F5F0E6; color:#0D0D0D; font-family:var(--body); font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased; }
+img  { display:block; max-width:100%; }
+a    { color:inherit; text-decoration:none; }
+
+/* ── Page switcher UI ───────────────────────────────────────── */
+#page-switcher {
+  position:fixed; top:0; left:0; right:0; z-index:9999;
+  background:#000; display:flex; align-items:center; gap:0;
+  border-bottom:2px solid var(--terra); height:42px; overflow-x:auto;
+}
+#page-switcher span { padding:0 8px; color:#888; font-family:var(--body); font-size:11px; letter-spacing:.15em; text-transform:uppercase; white-space:nowrap; flex-shrink:0; }
+.ps-btn {
+  padding:0 18px; height:42px; background:transparent; border:none;
+  color:#888; font-family:var(--body); font-size:12px; cursor:pointer;
+  letter-spacing:.1em; text-transform:uppercase; white-space:nowrap;
+  border-right:1px solid #222; flex-shrink:0; transition:all .15s;
+}
+.ps-btn:hover  { color:#fff; background:#1a1a1a; }
+.ps-btn.active { color:#fff; background:var(--terra); }
+.page-section  { display:none; }
+.page-section.active { display:block; }
+body { padding-top:42px; }
+
+/* ── Shared layout ──────────────────────────────────────────── */
+.site-width { max-width:1280px; margin:0 auto; padding:0 32px; }
+@media(max-width:768px){ .site-width { padding:0 20px; } }
+.grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; }
+.grid-2 { display:grid; grid-template-columns:repeat(2,1fr); gap:8px; }
+@media(max-width:900px){ .grid-3 { grid-template-columns:1fr; } .grid-2 { grid-template-columns:1fr; } }
+
+/* ── Eyebrow + accent bar ───────────────────────────────────── */
+.eyebrow { font-family:var(--body); font-size:11px; letter-spacing:.25em; text-transform:uppercase; color:var(--terra); margin-bottom:8px; }
+.accent-bar { width:40px; height:4px; background:var(--terra); margin-top:8px; margin-bottom:32px; }
+
+/* ── Nav ────────────────────────────────────────────────────── */
+nav {
+  background:var(--black); height:56px; display:flex; align-items:center;
+  position:sticky; top:42px; z-index:100;
+}
+.nav-inner { max-width:1280px; margin:0 auto; padding:0 32px; width:100%; display:flex; align-items:center; justify-content:space-between; }
+.nav-brand { display:flex; align-items:center; gap:10px; }
+.nav-hm { width:28px; height:28px; background:var(--terra); border-radius:3px; display:flex; align-items:center; justify-content:center; font-family:var(--display); font-weight:700; font-size:11px; color:#fff; transform:rotate(-6deg); flex-shrink:0; }
+.nav-wordmark { font-family:var(--display); font-weight:600; font-size:18px; color:#fff; letter-spacing:-.02em; }
+.nav-sub { font-family:var(--body); font-size:9px; letter-spacing:.2em; text-transform:uppercase; color:var(--grey); margin-top:1px; }
+.nav-links { display:flex; align-items:center; gap:32px; }
+.nav-link { font-family:var(--body); font-size:13px; color:#aaa; transition:color .15s; }
+.nav-link:hover, .nav-link.active { color:#fff; }
+.nav-link.active { position:relative; }
+.nav-link.active::after { content:''; position:absolute; bottom:-4px; left:0; right:0; height:2px; background:var(--terra); }
+.nav-cta { background:var(--terra); color:#fff; font-family:var(--body); font-size:12px; font-weight:600; padding:8px 20px; letter-spacing:.08em; text-transform:uppercase; border-radius:2px; }
+
+/* ── Hero ───────────────────────────────────────────────────── */
+.hero { position:relative; min-height:620px; display:flex; align-items:center; overflow:hidden; }
+.hero-img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; }
+.hero-overlay { position:absolute; inset:0; }
+.hero-content { position:relative; z-index:2; max-width:1280px; margin:0 auto; padding:80px 32px; width:100%; }
+.hero h1 { font-family:var(--display); font-weight:700; font-size:clamp(2.4rem,5vw,4rem); color:#fff; letter-spacing:-.03em; line-height:1.05; max-width:680px; margin-bottom:16px; }
+.hero-sub { font-family:var(--body); font-size:18px; color:rgba(255,255,255,.75); max-width:520px; line-height:1.5; margin-bottom:32px; }
+.hero-btns { display:flex; gap:16px; flex-wrap:wrap; }
+.btn-terra { background:var(--terra); color:#fff; font-family:var(--body); font-size:13px; font-weight:600; padding:14px 32px; letter-spacing:.1em; text-transform:uppercase; border-radius:2px; display:inline-block; }
+.btn-ghost { border:1.5px solid rgba(255,255,255,.5); color:#fff; font-family:var(--body); font-size:13px; font-weight:600; padding:14px 32px; letter-spacing:.1em; text-transform:uppercase; border-radius:2px; display:inline-block; }
+.hero-left { position:absolute; inset:0; display:flex; align-items:center; }
+.hero-left-text { position:relative; z-index:2; max-width:1280px; margin:0 auto; padding:80px 32px; width:100%; }
+
+/* ── Hero Carousel ──────────────────────────────────────────── */
+.carousel { position:relative; min-height:700px; display:flex; align-items:center; overflow:hidden; }
+.carousel-slide { position:absolute; inset:0; transition:opacity .7s ease; }
+.carousel-slide img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; }
+.carousel-slide .c-overlay { position:absolute; inset:0; background:rgba(13,13,13,.4); }
+.carousel-content { position:relative; z-index:10; max-width:1280px; margin:0 auto; padding:96px 32px; width:100%; display:flex; flex-direction:column; gap:24px; }
+.carousel-content h1 { font-family:var(--display); font-weight:700; font-size:clamp(2.4rem,5vw,3.75rem); color:#fff; letter-spacing:-.03em; line-height:1.05; max-width:680px; }
+.carousel-content .c-sub { font-family:var(--body); font-size:18px; color:rgba(255,255,255,.75); max-width:520px; line-height:1.5; }
+.c-caption { position:absolute; bottom:64px; right:32px; z-index:10; font-family:var(--body); font-size:11px; color:rgba(255,255,255,.5); letter-spacing:.15em; text-transform:uppercase; }
+.c-dots { position:absolute; bottom:24px; left:50%; transform:translateX(-50%); z-index:10; display:flex; gap:8px; align-items:center; }
+.c-dot { background:rgba(255,255,255,.35); border:none; cursor:pointer; border-radius:99px; transition:all .3s; padding:0; }
+.c-dot.active { background:var(--terra); width:24px; height:6px; }
+.c-dot:not(.active) { width:6px; height:6px; }
+.c-progress { position:absolute; bottom:0; left:0; right:0; z-index:10; height:2px; background:rgba(255,255,255,.1); }
+.c-bar { height:100%; background:var(--terra); transform-origin:left; animation:cbar 5s linear; }
+@keyframes cbar { from{transform:scaleX(0)} to{transform:scaleX(1)} }
+
+/* ── Stats bar ──────────────────────────────────────────────── */
+.stats-bar { background:var(--black); padding:48px 0; }
+.stats-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; text-align:center; }
+@media(max-width:640px){ .stats-grid { grid-template-columns:repeat(2,1fr); } }
+.stat-num { font-family:var(--display); font-weight:700; font-size:clamp(2.2rem,4vw,3.2rem); color:var(--terra); line-height:1; }
+.stat-label { font-family:var(--body); font-size:11px; color:var(--grey); letter-spacing:.18em; text-transform:uppercase; margin-top:8px; }
+
+/* ── Section ────────────────────────────────────────────────── */
+.section { padding:80px 0; }
+.section-lg { padding:110px 0; }
+.section-sm { padding:56px 0; }
+.bg-cream  { background:var(--cream); }
+.bg-cream2 { background:var(--cream2); }
+.bg-black  { background:var(--black); }
+.bg-dark   { background:var(--dark); }
+.bg-terra  { background:var(--terra); }
+
+/* ── Section headings ───────────────────────────────────────── */
+.sh { font-family:var(--display); font-weight:700; font-size:clamp(1.8rem,3vw,2.75rem); letter-spacing:-.03em; line-height:1.1; color:var(--black); margin-top:8px; margin-bottom:20px; }
+.sh-white { color:#fff; }
+.sh-sm { font-size:clamp(1.3rem,2vw,1.7rem); }
+.body-text { font-family:var(--body); font-size:15px; color:var(--grey); line-height:1.7; }
+
+/* ── Project grid ───────────────────────────────────────────── */
+.project-grid { display:grid; gap:4px; }
+.pg-3 { grid-template-columns:repeat(3,1fr); }
+.pg-2 { grid-template-columns:repeat(2,1fr); }
+@media(max-width:760px){ .pg-3, .pg-2 { grid-template-columns:1fr; } }
+.proj-item { position:relative; aspect-ratio:4/3; overflow:hidden; }
+.proj-item img { width:100%; height:100%; object-fit:cover; transition:transform .5s; }
+.proj-item:hover img { transform:scale(1.04); }
+.proj-overlay { position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,.65) 0%, transparent 50%); display:flex; align-items:flex-end; padding:20px; opacity:0; transition:opacity .3s; }
+.proj-item:hover .proj-overlay { opacity:1; }
+.proj-label { font-family:var(--display); font-weight:600; font-size:15px; color:#fff; }
+.proj-sub { font-family:var(--body); font-size:10px; color:rgba(255,255,255,.7); letter-spacing:.15em; text-transform:uppercase; margin-top:2px; }
+
+/* ── Vertical cards ─────────────────────────────────────────── */
+.vert-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:4px; }
+@media(max-width:760px){ .vert-grid { grid-template-columns:1fr; } }
+.vert-card { background:var(--dark); padding:40px 36px; display:flex; flex-direction:column; justify-content:space-between; min-height:280px; }
+.vert-card.accent { background:var(--terra); }
+.vert-accent-bar { width:36px; height:4px; background:var(--terra); margin-bottom:24px; }
+.vert-card.accent .vert-accent-bar { background:rgba(255,255,255,.5); }
+.vert-card h3 { font-family:var(--display); font-weight:700; font-size:1.6rem; color:#fff; letter-spacing:-.02em; margin-bottom:12px; }
+.vert-card p { font-family:var(--body); font-size:13.5px; color:rgba(255,255,255,.6); line-height:1.65; }
+.vert-card.accent p { color:rgba(255,255,255,.8); }
+.vert-link { font-family:var(--body); font-size:13px; font-weight:600; color:var(--terra); margin-top:24px; }
+.vert-card.accent .vert-link { color:#fff; }
+
+/* ── Differentiators ────────────────────────────────────────── */
+.diff-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:48px; }
+@media(max-width:760px){ .diff-grid { grid-template-columns:1fr; gap:32px; } }
+.diff-bar { width:36px; height:4px; background:var(--terra); margin-bottom:20px; }
+.diff-title { font-family:var(--display); font-weight:700; font-size:1.15rem; color:var(--black); margin-bottom:12px; }
+.diff-body { font-family:var(--body); font-size:14px; color:var(--grey); line-height:1.7; }
+
+/* ── Client logos ───────────────────────────────────────────── */
+.logo-row { display:flex; flex-wrap:wrap; gap:20px 32px; align-items:center; justify-content:center; }
+.logo-name { font-family:var(--body); font-size:13px; color:var(--grey); opacity:.7; }
+
+/* ── CTA strip ──────────────────────────────────────────────── */
+.cta-strip { text-align:center; padding:80px 32px; }
+.cta-strip h2 { font-family:var(--display); font-weight:700; font-size:clamp(2rem,4vw,3rem); color:#fff; margin-bottom:12px; letter-spacing:-.03em; }
+.cta-strip p { font-family:var(--body); font-size:17px; color:rgba(255,255,255,.8); margin-bottom:36px; }
+
+/* ── Form ───────────────────────────────────────────────────── */
+.form-wrap { max-width:560px; margin:0 auto; }
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:12px; }
+@media(max-width:560px){ .form-row { grid-template-columns:1fr; } }
+.form-input, .form-textarea {
+  width:100%; background:#fff; border:1.5px solid var(--cream3); color:var(--black);
+  font-family:var(--body); font-size:14px; padding:14px 16px; border-radius:2px;
+  outline:none; transition:border-color .15s; margin-bottom:12px;
+}
+.form-input::placeholder, .form-textarea::placeholder { color:var(--grey); }
+.form-textarea { resize:none; height:100px; display:block; }
+.form-submit { width:100%; background:var(--terra); color:#fff; font-family:var(--body); font-weight:600; font-size:13px; letter-spacing:.1em; text-transform:uppercase; padding:16px; border:none; border-radius:2px; cursor:pointer; margin-top:4px; }
+
+/* ── Case study ─────────────────────────────────────────────── */
+.case-grid { display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; }
+@media(max-width:820px){ .case-grid { grid-template-columns:1fr; } }
+.case-img { aspect-ratio:16/10; overflow:hidden; border-radius:2px; }
+.case-img img { width:100%; height:100%; object-fit:cover; }
+
+/* ── Sectors list ───────────────────────────────────────────── */
+.sectors-list { list-style:none; }
+.sectors-list li { display:flex; align-items:center; gap:16px; padding:10px 0; border-bottom:1px solid var(--cream3); }
+.sector-num { font-family:var(--body); font-size:11px; font-weight:600; color:var(--terra); width:22px; flex-shrink:0; }
+.sector-name { font-family:var(--body); font-size:15px; font-weight:600; color:var(--black); }
+
+/* ── Tech tags ──────────────────────────────────────────────── */
+.tech-tags { display:flex; flex-wrap:wrap; gap:10px; }
+.tech-tag { background:var(--dark); color:var(--cream3); font-family:var(--body); font-size:12px; padding:8px 16px; border:1px solid rgba(255,255,255,.08); letter-spacing:.05em; border-radius:2px; }
+
+/* ── Partners hero ──────────────────────────────────────────── */
+.partners-hero { position:relative; min-height:560px; background:var(--dark); display:flex; align-items:center; overflow:hidden; }
+.partners-img-right { position:absolute; right:0; top:0; width:50%; height:100%; }
+.partners-img-right img { width:100%; height:100%; object-fit:cover; opacity:.35; }
+@media(min-width:1024px){ .partners-img-right img { opacity:1; } }
+.partners-img-right::before { content:''; position:absolute; inset-y:0; left:0; width:160px; background:linear-gradient(to right, var(--dark), transparent); z-index:1; }
+.partners-text { position:relative; z-index:2; max-width:560px; padding:80px 32px; }
+
+/* ── Value props ────────────────────────────────────────────── */
+.vp-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:4px; }
+@media(max-width:760px){ .vp-grid { grid-template-columns:1fr; } }
+.vp-card { background:var(--cream2); padding:40px 36px; }
+.vp-num { font-family:var(--body); font-size:11px; font-weight:700; letter-spacing:.2em; color:var(--terra); margin-bottom:16px; }
+.vp-accent { width:28px; height:3px; background:var(--terra); margin-bottom:24px; }
+.vp-title { font-family:var(--display); font-weight:700; font-size:1.15rem; color:var(--black); margin-bottom:14px; }
+.vp-body { font-family:var(--body); font-size:13.5px; color:var(--grey); line-height:1.7; }
+
+/* ── How it works ───────────────────────────────────────────── */
+.hiw-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
+@media(max-width:760px){ .hiw-grid { grid-template-columns:repeat(2,1fr); } }
+.hiw-item { border-left:2px solid var(--terra); padding-left:20px; }
+.hiw-step { font-family:var(--body); font-size:11px; font-weight:700; color:var(--terra); letter-spacing:.15em; margin-bottom:8px; }
+.hiw-label { font-family:var(--body); font-size:14px; color:#fff; font-weight:600; line-height:1.4; }
+
+/* ── Client strip ───────────────────────────────────────────── */
+.client-strip { display:flex; flex-wrap:wrap; gap:8px 24px; align-items:center; }
+.client-pill { background:var(--cream2); border:1px solid var(--cream3); font-family:var(--body); font-size:13px; font-weight:600; color:var(--black); padding:6px 14px; border-radius:2px; }
+
+/* ── Section columns ────────────────────────────────────────── */
+.two-col { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:start; }
+@media(max-width:820px){ .two-col { grid-template-columns:1fr; } }
+
+/* ── Footer ─────────────────────────────────────────────────── */
+footer { background:var(--black); padding:64px 0 32px; }
+.foot-grid { display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:48px; margin-bottom:48px; }
+@media(max-width:760px){ .foot-grid { grid-template-columns:1fr; gap:32px; } }
+.foot-brand { font-family:var(--display); font-weight:600; font-size:20px; color:#fff; }
+.foot-sub { font-family:var(--body); font-size:9px; letter-spacing:.2em; text-transform:uppercase; color:var(--grey); margin-bottom:16px; }
+.foot-body { font-family:var(--body); font-size:13px; color:var(--grey); line-height:1.7; }
+.foot-lic { font-family:var(--body); font-size:11px; color:var(--grey); margin-top:16px; opacity:.7; }
+.foot-heading { font-family:var(--body); font-size:10px; letter-spacing:.25em; text-transform:uppercase; color:var(--terra); margin-bottom:16px; }
+.foot-links { list-style:none; display:flex; flex-direction:column; gap:8px; }
+.foot-links li a { font-family:var(--body); font-size:13px; color:var(--grey); }
+.foot-bottom { border-top:1px solid #222; padding-top:24px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; }
+.foot-copy { font-family:var(--body); font-size:11px; color:rgba(136,136,128,.5); }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- PAGE SWITCHER                                               -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div id="page-switcher">
+  <span>Preview ↗</span>
+  <button class="ps-btn active" onclick="showPage('home')">Homepage</button>
+  <button class="ps-btn" onclick="showPage('retail')">Retail</button>
+  <button class="ps-btn" onclick="showPage('commercial')">Commercial</button>
+  <button class="ps-btn" onclick="showPage('hospitality')">Hospitality</button>
+  <button class="ps-btn" onclick="showPage('partners')">Partners</button>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- PAGE: HOMEPAGE                                             -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div id="page-home" class="page-section active">
+
+  <!-- Nav -->
+  <nav>
+    <div class="nav-inner">
+      <div class="nav-brand">
+        <div class="nav-hm">HM</div>
+        <div>
+          <div class="nav-wordmark">hallmarc</div>
+          <div class="nav-sub">National Fitouts</div>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a href="#" class="nav-link">Retail</a>
+        <a href="#" class="nav-link">Commercial</a>
+        <a href="#" class="nav-link">Hospitality</a>
+        <a href="#" class="nav-link">Partners</a>
+        <a href="#" class="nav-cta">Enquire</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Carousel -->
+  <section class="carousel" id="hero-carousel">
+    <!-- Slides -->
+    <div class="carousel-slide" data-index="0" style="opacity:1;z-index:1">
+      <img src="public/images/terminus.png" alt="The Terminus Hotel">
+      <div class="c-overlay"></div>
+    </div>
+    <div class="carousel-slide" data-index="1" style="opacity:0;z-index:0">
+      <img src="public/images/stylerunner_hero.jpg" alt="Stylerunner retail fitout">
+      <div class="c-overlay"></div>
+    </div>
+    <div class="carousel-slide" data-index="2" style="opacity:0;z-index:0">
+      <img src="public/images/commercial1.jpg" alt="DISSH Head Office">
+      <div class="c-overlay"></div>
+    </div>
+    <div class="carousel-slide" data-index="3" style="opacity:0;z-index:0">
+      <img src="public/images/xo1.jpg" alt="X&O retail fitout">
+      <div class="c-overlay"></div>
+    </div>
+    <div class="carousel-slide" data-index="4" style="opacity:0;z-index:0">
+      <img src="public/images/hero2.jpg" alt="In-house joinery manufacturing">
+      <div class="c-overlay"></div>
+    </div>
+
+    <!-- Fixed content over slides -->
+    <div class="carousel-content">
+      <h1>Fitouts built to be remembered.</h1>
+      <p class="c-sub">National fitouts for retail, commercial and hospitality — concept to completion.</p>
+      <div class="hero-btns">
+        <a href="#" class="btn-terra">Start your project</a>
+        <a href="#" class="btn-ghost">View projects</a>
+      </div>
+    </div>
+
+    <!-- Caption -->
+    <p class="c-caption" id="c-caption">The Terminus Hotel · Yarrawonga, VIC</p>
+
+    <!-- Dot indicators -->
+    <div class="c-dots" id="c-dots">
+      <button class="c-dot active" data-i="0" aria-label="Slide 1"></button>
+      <button class="c-dot" data-i="1" aria-label="Slide 2"></button>
+      <button class="c-dot" data-i="2" aria-label="Slide 3"></button>
+      <button class="c-dot" data-i="3" aria-label="Slide 4"></button>
+      <button class="c-dot" data-i="4" aria-label="Slide 5"></button>
+    </div>
+
+    <!-- Progress bar -->
+    <div class="c-progress"><div class="c-bar" id="c-bar"></div></div>
+  </section>
+
+  <script>
+  (function(){
+    var SLIDES = [
+      { caption: "The Terminus Hotel · Yarrawonga, VIC" },
+      { caption: "Stylerunner · Retail" },
+      { caption: "DISSH Head Office · Commercial" },
+      { caption: "X&O · Retail" },
+      { caption: "In-house joinery manufacturing" },
+    ];
+    var INTERVAL = 5000;
+    var current = 0;
+    var timer = null;
+    var transitioning = false;
+
+    var slides = document.querySelectorAll('#hero-carousel .carousel-slide');
+    var dots   = document.querySelectorAll('#c-dots .c-dot');
+    var caption = document.getElementById('c-caption');
+    var bar     = document.getElementById('c-bar');
+
+    function resetBar() {
+      bar.style.animation = 'none';
+      bar.offsetHeight; // reflow
+      bar.style.animation = 'cbar ' + INTERVAL + 'ms linear';
+    }
+
+    function goTo(idx) {
+      if (transitioning || idx === current) return;
+      transitioning = true;
+      slides[current].style.opacity = '0';
+      slides[current].style.zIndex = '0';
+      slides[idx].style.zIndex = '1';
+      slides[idx].style.opacity = '1';
+      dots[current].classList.remove('active');
+      dots[idx].classList.add('active');
+      caption.textContent = SLIDES[idx].caption;
+      current = idx;
+      resetBar();
+      setTimeout(function(){ transitioning = false; }, 700);
+    }
+
+    function advance() {
+      goTo((current + 1) % SLIDES.length);
+    }
+
+    function startTimer() {
+      clearInterval(timer);
+      timer = setInterval(advance, INTERVAL);
+    }
+
+    dots.forEach(function(dot) {
+      dot.addEventListener('click', function() {
+        var i = parseInt(this.getAttribute('data-i'), 10);
+        goTo(i);
+        startTimer();
+      });
+    });
+
+    resetBar();
+    startTimer();
+  })();
+  </script>
+
+  <!-- Stats -->
+  <section class="stats-bar">
+    <div class="site-width">
+      <div class="stats-grid">
+        <div><div class="stat-num">150+</div><div class="stat-label">Projects delivered</div></div>
+        <div><div class="stat-num">8</div><div class="stat-label">Years established</div></div>
+        <div><div class="stat-num">5</div><div class="stat-label">States licensed</div></div>
+        <div><div class="stat-num">0</div><div class="stat-label">Site safety incidents</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project grid -->
+  <section class="section bg-cream">
+    <div class="site-width" style="margin-bottom:40px">
+      <p class="eyebrow">Featured projects</p>
+      <div class="accent-bar"></div>
+      <h2 class="sh">Work we're proud of.</h2>
+    </div>
+    <div class="project-grid pg-3">
+      <div class="proj-item">
+        <img src="public/images/stylerunner_hero.jpg" alt="Stylerunner">
+        <div class="proj-overlay"><div><div class="proj-label">Stylerunner</div><div class="proj-sub">Retail</div></div></div>
+      </div>
+      <div class="proj-item">
+        <img src="public/images/commercial1.jpg" alt="DISSH Head Office">
+        <div class="proj-overlay"><div><div class="proj-label">DISSH Head Office</div><div class="proj-sub">Commercial</div></div></div>
+      </div>
+      <div class="proj-item">
+        <img src="public/images/terminus.png" alt="The Terminus Hotel">
+        <div class="proj-overlay"><div><div class="proj-label">The Terminus Hotel</div><div class="proj-sub">Hospitality</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Verticals -->
+  <section class="bg-black" style="padding:0 0 80px">
+    <div class="site-width" style="padding-top:80px; margin-bottom:32px">
+      <p class="eyebrow">What we do</p>
+      <div class="accent-bar"></div>
+      <h2 class="sh sh-white">Three verticals. One standard.</h2>
+    </div>
+    <div class="vert-grid" style="max-width:1280px; margin:0 auto; padding:0 32px">
+      <div class="vert-card">
+        <div><div class="vert-accent-bar"></div><h3>Retail</h3><p>Flagship stores, national rollout programs and brand-compliant fitouts — delivered on time and on spec.</p></div>
+        <div class="vert-link">View projects →</div>
+      </div>
+      <div class="vert-card">
+        <div><div class="vert-accent-bar"></div><h3>Commercial</h3><p>Corporate workplaces, developer display suites, health, education and government — concept to completion.</p></div>
+        <div class="vert-link">View projects →</div>
+      </div>
+      <div class="vert-card accent">
+        <div><div class="vert-accent-bar"></div><h3>Hospitality</h3><p>Front-of-house design and back-of-house engineering. Commercial kitchens, licensed venues, QSR and hotels.</p></div>
+        <div class="vert-link">View projects →</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Differentiators -->
+  <section class="section-lg bg-cream">
+    <div class="site-width">
+      <p class="eyebrow">Why Hallmarc</p>
+      <div class="accent-bar"></div>
+      <h2 class="sh">Built differently.</h2>
+      <div class="diff-grid" style="margin-top:8px">
+        <div><div class="diff-bar"></div><div class="diff-title">In-house joinery</div><p class="diff-body">Our own manufacturing facility means tighter quality control, faster lead times and no substitutions without your approval.</p></div>
+        <div><div class="diff-bar"></div><div class="diff-title">Senior-led delivery</div><p class="diff-body">Your project is managed by a senior team member from brief through to handover — never handed off to juniors.</p></div>
+        <div><div class="diff-bar"></div><div class="diff-title">Concept to completion</div><p class="diff-body">Design coordination, procurement, trades, compliance, certification and handover — one team, one responsibility.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Client logos -->
+  <section class="section-sm bg-cream2">
+    <div class="site-width">
+      <p style="font-family:var(--body);font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--grey);text-align:center;margin-bottom:28px">Trusted by</p>
+      <div class="logo-row">
+        <span class="logo-name">Stylerunner</span><span class="logo-name">DISSH</span><span class="logo-name">Nudie Jeans</span>
+        <span class="logo-name">Kate Spade</span><span class="logo-name">Hugo Boss</span><span class="logo-name">Lovisa</span>
+        <span class="logo-name">Peter Alexander</span><span class="logo-name">Honey Birdette</span>
+        <span class="logo-name">Zambrero</span><span class="logo-name">The Terminus Hotel</span>
+        <span class="logo-name">RSL NSW</span><span class="logo-name">TAB</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA + form -->
+  <section class="bg-terra">
+    <div class="cta-strip">
+      <h2>Ready to start?</h2>
+      <p>Tell us about your project. We'll respond within one business day.</p>
+      <div class="form-wrap">
+        <div class="form-row">
+          <input class="form-input" placeholder="First name" style="margin-bottom:0">
+          <input class="form-input" placeholder="Last name" style="margin-bottom:0">
+        </div>
+        <input class="form-input" placeholder="Email address" type="email">
+        <input class="form-input" placeholder="Phone number" type="tel">
+        <textarea class="form-textarea" placeholder="Tell us about your project — location, scope, timeline..."></textarea>
+        <button class="form-submit" style="background:var(--black)">Start your project</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="site-width">
+      <div class="foot-grid">
+        <div>
+          <div class="foot-brand">hallmarc</div>
+          <div class="foot-sub">National Fitouts</div>
+          <p class="foot-body">Retail, commercial and hospitality fitouts — concept to completion. Founded 2016 by Marcus Hall.</p>
+          <p class="foot-lic">Licensed in VIC, QLD, SA, ACT and WA. Tasmania available on request.</p>
+        </div>
+        <div>
+          <div class="foot-heading">Services</div>
+          <ul class="foot-links">
+            <li><a href="#">Retail Fitouts</a></li>
+            <li><a href="#">Commercial Fitouts</a></li>
+            <li><a href="#">Hospitality Fitouts</a></li>
+            <li><a href="#">Architect & Designer Partners</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="foot-heading">Contact</div>
+          <ul class="foot-links">
+            <li><a href="#">hello@hallmarcfitouts.com.au</a></li>
+            <li><a href="#">hallmarcfitouts.com.au</a></li>
+          </ul>
+          <p style="font-family:var(--body);font-size:11px;color:rgba(136,136,128,.5);margin-top:24px">Cm3 certified · Zero site safety incidents</p>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span class="foot-copy">© 2026 Hallmarc National Fitouts. All rights reserved.</span>
+        <span class="foot-copy">Building licences held across VIC, QLD, SA, ACT and WA.</span>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- PAGE: RETAIL                                               -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div id="page-retail" class="page-section">
+  <nav>
+    <div class="nav-inner">
+      <div class="nav-brand">
+        <div class="nav-hm">HM</div>
+        <div><div class="nav-wordmark">hallmarc</div><div class="nav-sub">National Fitouts</div></div>
+      </div>
+      <div class="nav-links">
+        <a href="#" class="nav-link active">Retail</a>
+        <a href="#" class="nav-link">Commercial</a>
+        <a href="#" class="nav-link">Hospitality</a>
+        <a href="#" class="nav-link">Partners</a>
+        <a href="#" class="nav-cta">Enquire</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <img class="hero-img" src="public/images/stylerunner_hero.jpg" alt="Stylerunner retail fitout">
+    <div class="hero-overlay" style="background:rgba(13,13,13,.35)"></div>
+    <div class="hero-content">
+      <p class="eyebrow" style="color:var(--terra)">Retail</p>
+      <h1>Retail fitouts that deliver on brand.</h1>
+      <p class="hero-sub">From flagship stores to national rollout programs — on spec, on time, every site.</p>
+      <div class="hero-btns"><a href="#" class="btn-terra">Start your project</a></div>
+    </div>
+  </section>
+
+  <section class="section-lg bg-cream">
+    <div class="site-width">
+      <div class="two-col">
+        <div>
+          <p class="eyebrow">Retail fitouts</p>
+          <div class="accent-bar"></div>
+          <h2 class="sh">Built to your spec. Delivered nationally.</h2>
+          <p class="body-text">From concept through to completion, we manage every aspect of your retail fitout — design coordination, procurement, shopfitting, joinery, signage and compliance. Our in-house joinery manufacturing gives us quality control and speed that most fitout companies can't match.</p>
+        </div>
+        <div>
+          <p style="font-family:var(--body);font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--grey);margin-bottom:20px">Clients</p>
+          <div class="client-strip">
+            <span class="client-pill">Stylerunner</span><span class="client-pill">Nudie Jeans</span>
+            <span class="client-pill">DISSH</span><span class="client-pill">Kate Spade</span>
+            <span class="client-pill">Hugo Boss</span><span class="client-pill">Lovisa</span>
+            <span class="client-pill">Peter Alexander</span><span class="client-pill">Honey Birdette</span>
+            <span class="client-pill">X&amp;O</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="project-grid pg-3">
+    <div class="proj-item"><img src="public/images/stylerunner_hero.jpg" alt="Stylerunner"><div class="proj-overlay"><div><div class="proj-label">Stylerunner</div><div class="proj-sub">Retail</div></div></div></div>
+    <div class="proj-item"><img src="public/images/nudie1.jpg" alt="Nudie Jeans"><div class="proj-overlay"><div><div class="proj-label">Nudie Jeans</div><div class="proj-sub">Retail</div></div></div></div>
+    <div class="proj-item"><img src="public/images/xo1.jpg" alt="X&O"><div class="proj-overlay"><div><div class="proj-label">X&amp;O</div><div class="proj-sub">Retail</div></div></div></div>
+  </div>
+
+  <section class="section-lg bg-cream">
+    <div class="site-width">
+      <p class="eyebrow">Capabilities</p>
+      <div class="accent-bar"></div>
+      <div class="diff-grid">
+        <div><div class="diff-bar"></div><div class="diff-title">Flagship stores</div><p class="diff-body">Single-site flagship fitouts built to brand spec — in-house joinery, premium finishes, zero substitutions without your approval.</p></div>
+        <div><div class="diff-bar"></div><div class="diff-title">Multi-site rollouts</div><p class="diff-body">National programs managed from one team. Consistent delivery across VIC, QLD, SA, ACT and WA with licensed contractors in each state.</p></div>
+        <div><div class="diff-bar"></div><div class="diff-title">Brand compliance</div><p class="diff-body">We work directly from your brand guidelines and head office specs. Senior PM oversight on every site — not subcontracted or outsourced.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-cream2">
+    <div class="site-width" style="max-width:640px">
+      <p class="eyebrow">Get in touch</p>
+      <div class="accent-bar"></div>
+      <h2 class="sh">Tell us about your store.</h2>
+      <p class="body-text" style="margin-bottom:32px">Single site or national rollout — we'd love to hear about it.</p>
+      <div class="form-row">
+        <input class="form-input" placeholder="First name" style="margin-bottom:0">
+        <input class="form-input" placeholder="Last name" style="margin-bottom:0">
+      </div>
+      <input class="form-input" placeholder="Email address" type="email">
+      <input class="form-input" placeholder="Phone number" type="tel">
+      <textarea class="form-textarea" placeholder="Tell us about your project..."></textarea>
+      <button class="form-submit">Start your project</button>
+    </div>
+  </section>
+
+  <footer>
+    <div class="site-width">
+      <div class="foot-grid">
+        <div><div class="foot-brand">hallmarc</div><div class="foot-sub">National Fitouts</div><p class="foot-body">Retail, commercial and hospitality fitouts — concept to completion.</p><p class="foot-lic">Licensed in VIC, QLD, SA, ACT and WA.</p></div>
+        <div><div class="foot-heading">Services</div><ul class="foot-links"><li><a href="#">Retail Fitouts</a></li><li><a href="#">Commercial Fitouts</a></li><li><a href="#">Hospitality Fitouts</a></li><li><a href="#">Partners</a></li></ul></div>
+        <div><div class="foot-heading">Contact</div><ul class="foot-links"><li><a href="#">hello@hallmarcfitouts.com.au</a></li><li><a href="#">hallmarcfitouts.com.au</a></li></ul></div>
+      </div>
+      <div class="foot-bottom"><span class="foot-copy">© 2026 Hallmarc National Fitouts.</span><span class="foot-copy">VIC · QLD · SA · ACT · WA</span></div>
+    </div>
+  </footer>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- PAGE: COMMERCIAL                                           -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div id="page-commercial" class="page-section">
+  <nav>
+    <div class="nav-inner">
+      <div class="nav-brand"><div class="nav-hm">HM</div><div><div class="nav-wordmark">hallmarc</div><div class="nav-sub">National Fitouts</div></div></div>
+      <div class="nav-links">
+        <a href="#" class="nav-link">Retail</a>
+        <a href="#" class="nav-link active">Commercial</a>
+        <a href="#" class="nav-link">Hospitality</a>
+        <a href="#" class="nav-link">Partners</a>
+        <a href="#" class="nav-cta">Enquire</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <img class="hero-img" src="public/images/commercial1.jpg" alt="DISSH Head Office">
+    <div class="hero-overlay" style="background:rgba(13,13,13,.40)"></div>
+    <div class="hero-content">
+      <p class="eyebrow">Commercial</p>
+      <h1>Commercial fitouts built to impress.</h1>
+      <p class="hero-sub">Corporate workplaces, developer display suites, health, education and government — concept to completion.</p>
+      <div class="hero-btns"><a href="#" class="btn-terra">Start your project</a></div>
+    </div>
+  </section>
+
+  <section class="section-lg bg-cream">
+    <div class="site-width">
+      <div class="two-col">
+        <div>
+          <p class="eyebrow">Commercial fitouts</p>
+          <div class="accent-bar"></div>
+          <h2 class="sh">Every sector. One standard of delivery.</h2>
+          <p class="body-text">We deliver across a broad range of commercial sectors — from fast-tracked developer display suites to complex health and education fitouts. In-house joinery, senior PM oversight and national building licences mean we can deliver anywhere, at any scale.</p>
+        </div>
+        <div>
+          <p style="font-family:var(--body);font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--grey);margin-bottom:20px">Sectors</p>
+          <ul class="sectors-list">
+            <li><span class="sector-num">01</span><span class="sector-name">Corporate workplaces</span></li>
+            <li><span class="sector-num">02</span><span class="sector-name">Developer display suites</span></li>
+            <li><span class="sector-num">03</span><span class="sector-name">Health &amp; medical</span></li>
+            <li><span class="sector-num">04</span><span class="sector-name">Education</span></li>
+            <li><span class="sector-num">05</span><span class="sector-name">Government &amp; civic</span></li>
+            <li><span class="sector-num">06</span><span class="sector-name">Corporate HQ</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Eveleigh case study -->
+  <section class="section-lg bg-dark">
+    <div class="site-width">
+      <div class="case-grid">
+        <div>
+          <p style="font-family:var(--body);font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--terra);margin-bottom:12px">Case study</p>
+          <h2 class="sh sh-white">The Eveleigh, Broadbeach</h2>
+          <p class="body-text" style="color:rgba(255,255,255,.6);margin-bottom:16px">Developer display suite delivered in <strong style="color:#fff">4.5 weeks</strong> — from a bare shell to a fully furnished, presentation-ready suite for one of the Gold Coast's premium residential developments.</p>
+          <p class="body-text" style="color:rgba(255,255,255,.5);font-size:13px">Fast-tracked programme, in-house joinery for custom cabinetry and display pieces, and a senior PM on-site throughout. Zero variations from the approved programme.</p>
+          <p style="font-family:var(--body);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(136,136,128,.5);margin-top:28px">Broadbeach, QLD · 4.5 week programme</p>
+        </div>
+        <div class="case-img">
+          <img src="public/images/eveleigh.png" alt="The Eveleigh display suite">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="project-grid pg-3">
+    <div class="proj-item"><img src="public/images/commercial1.jpg" alt="DISSH Head Office"><div class="proj-overlay"><div><div class="proj-label">DISSH Head Office</div><div class="proj-sub">Commercial</div></div></div></div>
+    <div class="proj-item"><img src="public/images/commercial2.jpg" alt="Office fitout"><div class="proj-overlay"><div><div class="proj-label">Corporate workplace</div><div class="proj-sub">Commercial</div></div></div></div>
+    <div class="proj-item"><img src="public/images/commercial_pro34.jpg" alt="Commercial fitout"><div class="proj-overlay"><div><div class="proj-label">Office fitout</div><div class="proj-sub">Commercial</div></div></div></div>
+  </div>
+
+  <section class="section bg-cream2">
+    <div class="site-width" style="max-width:640px">
+      <p class="eyebrow">Get in touch</p>
+      <div class="accent-bar"></div>
+      <h2 class="sh">Tell us about your project.</h2>
+      <p class="body-text" style="margin-bottom:32px">From a single tenancy to a multi-floor corporate HQ — we'd like to hear about it.</p>
+      <div class="form-row"><input class="form-input" placeholder="First name" style="margin-bottom:0"><input class="form-input" placeholder="Last name" style="margin-bottom:0"></div>
+      <input class="form-input" placeholder="Email address" type="email">
+      <input class="form-input" placeholder="Phone number" type="tel">
+      <textarea class="form-textarea" placeholder="Tell us about your project..."></textarea>
+      <button class="form-submit">Start your project</button>
+    </div>
+  </section>
+
+  <footer>
+    <div class="site-width">
+      <div class="foot-grid">
+        <div><div class="foot-brand">hallmarc</div><div class="foot-sub">National Fitouts</div><p class="foot-body">Retail, commercial and hospitality fitouts — concept to completion.</p><p class="foot-lic">Licensed in VIC, QLD, SA, ACT and WA.</p></div>
+        <div><div class="foot-heading">Services</div><ul class="foot-links"><li><a href="#">Retail Fitouts</a></li><li><a href="#">Commercial Fitouts</a></li><li><a href="#">Hospitality Fitouts</a></li><li><a href="#">Partners</a></li></ul></div>
+        <div><div class="foot-heading">Contact</div><ul class="foot-links"><li><a href="#">hello@hallmarcfitouts.com.au</a></li><li><a href="#">hallmarcfitouts.com.au</a></li></ul></div>
+      </div>
+      <div class="foot-bottom"><span class="foot-copy">© 2026 Hallmarc National Fitouts.</span><span class="foot-copy">VIC · QLD · SA · ACT · WA</span></div>
+    </div>
+  </footer>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- PAGE: HOSPITALITY                                          -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div id="page-hospitality" class="page-section">
+  <nav>
+    <div class="nav-inner">
+      <div class="nav-brand"><div class="nav-hm">HM</div><div><div class="nav-wordmark">hallmarc</div><div class="nav-sub">National Fitouts</div></div></div>
+      <div class="nav-links">
+        <a href="#" class="nav-link">Retail</a>
+        <a href="#" class="nav-link">Commercial</a>
+        <a href="#" class="nav-link active">Hospitality</a>
+        <a href="#" class="nav-link">Partners</a>
+        <a href="#" class="nav-cta">Enquire</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero" style="min-height:660px">
+    <img class="hero-img" src="public/images/terminus.png" alt="The Terminus Hotel">
+    <div class="hero-overlay" style="background:rgba(13,13,13,.42)"></div>
+    <div class="hero-content">
+      <p class="eyebrow">Hospitality</p>
+      <h1>Hospitality fitouts that perform.</h1>
+      <p class="hero-sub">Front-of-house design. Back-of-house engineering. Delivered by specialists.</p>
+      <div class="hero-btns"><a href="#" class="btn-terra">Start your project</a></div>
+    </div>
+  </section>
+
+  <section class="section-lg bg-cream">
+    <div class="site-width">
+      <div class="two-col">
+        <div>
+          <p class="eyebrow">Who we work with</p>
+          <div class="accent-bar"></div>
+          <h2 class="sh">From licensed venues to national QSR programs.</h2>
+          <p class="body-text">We deliver full fitouts for restaurants, pubs, bars, hotels, cafes and quick-service restaurants across Australia. Whether it's a single flagship venue or a multi-site rollout, our team manages every trade from DA approval through to handover.</p>
+        </div>
+        <div>
+          <p style="font-family:var(--body);font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--grey);margin-bottom:20px">Clients</p>
+          <div class="client-strip">
+            <span class="client-pill">Zambrero</span><span class="client-pill">The Terminus Hotel</span>
+            <span class="client-pill">The King Hotel</span><span class="client-pill">RSL NSW</span>
+            <span class="client-pill">TAB</span><span class="client-pill">Zarraffa's Coffee</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech band -->
+  <section style="background:var(--dark);padding:64px 0">
+    <div class="site-width">
+      <p style="font-family:var(--body);font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--terra);margin-bottom:12px">Technical expertise</p>
+      <h3 style="font-family:var(--display);font-weight:700;font-size:1.5rem;color:#fff;margin-bottom:28px;letter-spacing:-.02em">We handle what others sub out.</h3>
+      <div class="tech-tags">
+        <span class="tech-tag">Commercial kitchens</span>
+        <span class="tech-tag">3-phase power</span>
+        <span class="tech-tag">Grease traps</span>
+        <span class="tech-tag">Exhausts &amp; ventilation</span>
+        <span class="tech-tag">Hydraulics</span>
+        <span class="tech-tag">Drainage &amp; waste</span>
+        <span class="tech-tag">Fire suppression</span>
+        <span class="tech-tag">Cool rooms</span>
+        <span class="tech-tag">Pass-through windows</span>
+      </div>
+      <p class="body-text" style="color:rgba(255,255,255,.4);font-size:13px;margin-top:24px;max-width:520px">In-house capability across commercial kitchen design, extraction, hydraulics and 3-phase electrical means no coordination gaps — and a single point of contact from concept through to handover.</p>
+    </div>
+  </section>
+
+  <!-- Terminus feature -->
+  <section class="section-lg bg-black">
+    <div class="site-width">
+      <div class="case-grid">
+        <div>
+          <p style="font-family:var(--body);font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--terra);margin-bottom:12px">Featured project</p>
+          <h2 class="sh sh-white">The Terminus Hotel</h2>
+          <p class="body-text" style="color:rgba(255,255,255,.6);margin-bottom:16px">Full venue fitout for one of Yarrawonga's landmark hospitality destinations. We delivered front-of-house design, commercial kitchen build, bar service areas, acoustic treatment and all compliance works — on programme, to the operator's exact brief.</p>
+          <p style="font-family:var(--body);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(136,136,128,.5);margin-top:28px">Yarrawonga, VIC</p>
+        </div>
+        <div class="case-img">
+          <img src="public/images/terminus.png" alt="The Terminus Hotel">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="project-grid pg-2">
+    <div class="proj-item"><img src="public/images/terminus.png" alt="The Terminus Hotel"><div class="proj-overlay"><div><div class="proj-label">The Terminus Hotel</div><div class="proj-sub">Yarrawonga, VIC</div></div></div></div>
+    <div class="proj-item"><img src="public/images/hospofitout.jpg" alt="Back of house"><div class="proj-overlay"><div><div class="proj-label">Back-of-house build</div><div class="proj-sub">Commercial kitchen</div></div></div></div>
+  </div>
+
+  <section class="section bg-cream2">
+    <div class="site-width" style="max-width:640px">
+      <p class="eyebrow">Get in touch</p>
+      <div class="accent-bar"></div>
+      <h2 class="sh">Tell us about your venue.</h2>
+      <p class="body-text" style="margin-bottom:32px">We respond within one business day. Licensed nationally — Cm3 certified.</p>
+      <div class="form-row"><input class="form-input" placeholder="First name" style="margin-bottom:0"><input class="form-input" placeholder="Last name" style="margin-bottom:0"></div>
+      <input class="form-input" placeholder="Email address" type="email">
+      <input class="form-input" placeholder="Phone number" type="tel">
+      <textarea class="form-textarea" placeholder="Tell us about your venue or project..."></textarea>
+      <button class="form-submit">Start your project</button>
+    </div>
+  </section>
+
+  <footer>
+    <div class="site-width">
+      <div class="foot-grid">
+        <div><div class="foot-brand">hallmarc</div><div class="foot-sub">National Fitouts</div><p class="foot-body">Retail, commercial and hospitality fitouts — concept to completion.</p><p class="foot-lic">Licensed in VIC, QLD, SA, ACT and WA.</p></div>
+        <div><div class="foot-heading">Services</div><ul class="foot-links"><li><a href="#">Retail Fitouts</a></li><li><a href="#">Commercial Fitouts</a></li><li><a href="#">Hospitality Fitouts</a></li><li><a href="#">Partners</a></li></ul></div>
+        <div><div class="foot-heading">Contact</div><ul class="foot-links"><li><a href="#">hello@hallmarcfitouts.com.au</a></li><li><a href="#">hallmarcfitouts.com.au</a></li></ul></div>
+      </div>
+      <div class="foot-bottom"><span class="foot-copy">© 2026 Hallmarc National Fitouts.</span><span class="foot-copy">VIC · QLD · SA · ACT · WA</span></div>
+    </div>
+  </footer>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- PAGE: PARTNERS                                             -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div id="page-partners" class="page-section">
+  <nav>
+    <div class="nav-inner">
+      <div class="nav-brand"><div class="nav-hm">HM</div><div><div class="nav-wordmark">hallmarc</div><div class="nav-sub">National Fitouts</div></div></div>
+      <div class="nav-links">
+        <a href="#" class="nav-link">Retail</a>
+        <a href="#" class="nav-link">Commercial</a>
+        <a href="#" class="nav-link">Hospitality</a>
+        <a href="#" class="nav-link active">Partners</a>
+        <a href="#" class="nav-cta">Enquire</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Dark hero — text left, image right -->
+  <section class="partners-hero">
+    <div class="partners-img-right">
+      <img src="public/images/commercial1.jpg" alt="Commercial fitout">
+    </div>
+    <div class="site-width" style="width:100%;position:relative;z-index:2">
+      <div class="partners-text">
+        <p style="font-family:var(--body);font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--terra);margin-bottom:16px">Architects · Interior Designers · Project Managers</p>
+        <h1 style="font-family:var(--display);font-weight:700;font-size:clamp(2.2rem,4vw,3.2rem);color:#fff;letter-spacing:-.03em;line-height:1.08;margin-bottom:20px">Your delivery partner.<br>Not another contractor.</h1>
+        <p style="font-family:var(--body);font-size:17px;color:rgba(255,255,255,.7);line-height:1.55">We build what design teams create. Senior-led, licence-backed, with in-house joinery capability to protect your intent from concept through to handover.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Value props -->
+  <section class="section-lg bg-cream">
+    <div class="site-width">
+      <p class="eyebrow">Why partner with us</p>
+      <div class="accent-bar"></div>
+      <div class="vp-grid">
+        <div class="vp-card">
+          <div class="vp-num">01</div>
+          <div class="vp-accent"></div>
+          <div class="vp-title">Protect design intent</div>
+          <p class="vp-body">We build what you designed. Our senior trade-qualified team and in-house joinery manufacturing mean no substitutions or shortcuts without your sign-off. Your drawings stay intact.</p>
+        </div>
+        <div class="vp-card">
+          <div class="vp-num">02</div>
+          <div class="vp-accent"></div>
+          <div class="vp-title">Early-stage input</div>
+          <p class="vp-body">Involve us at concept stage. We provide buildability advice, cost guidance and programme certainty before you tender — so there are no surprises when the project goes live.</p>
+        </div>
+        <div class="vp-card">
+          <div class="vp-num">03</div>
+          <div class="vp-accent"></div>
+          <div class="vp-title">Referral revenue stream</div>
+          <p class="vp-body">Refer a project and we handle the rest. We acknowledge your role throughout delivery and keep you informed at every stage. Your relationship with the client stays yours.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section style="background:var(--black);padding:56px 0">
+    <div class="site-width">
+      <p style="font-family:var(--body);font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--terra);margin-bottom:32px">How it works</p>
+      <div class="hiw-grid">
+        <div class="hiw-item"><div class="hiw-step">01</div><div class="hiw-label">Introduce yourself</div></div>
+        <div class="hiw-item"><div class="hiw-step">02</div><div class="hiw-label">We meet and align</div></div>
+        <div class="hiw-item"><div class="hiw-step">03</div><div class="hiw-label">Refer a live project</div></div>
+        <div class="hiw-item"><div class="hiw-step">04</div><div class="hiw-label">We deliver — you're kept in the loop</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Form -->
+  <section class="section bg-cream2">
+    <div class="site-width" style="max-width:640px">
+      <p class="eyebrow">Partner enquiry</p>
+      <div class="accent-bar"></div>
+      <h2 class="sh">Let's talk about working together.</h2>
+      <p class="body-text" style="margin-bottom:32px">Tell us about your practice and the projects you're working on. We'll get back to you within one business day.</p>
+      <div class="form-row"><input class="form-input" placeholder="First name" style="margin-bottom:0"><input class="form-input" placeholder="Last name" style="margin-bottom:0"></div>
+      <input class="form-input" placeholder="Practice / Firm name">
+      <input class="form-input" placeholder="Email address" type="email">
+      <input class="form-input" placeholder="Phone number" type="tel">
+      <textarea class="form-textarea" placeholder="Project type and brief description..."></textarea>
+      <button class="form-submit">Get in touch</button>
+      <p style="font-family:var(--body);font-size:11px;color:var(--grey);margin-top:20px">Licensed in VIC, QLD, SA, ACT and WA. Tasmania available on request.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="site-width">
+      <div class="foot-grid">
+        <div><div class="foot-brand">hallmarc</div><div class="foot-sub">National Fitouts</div><p class="foot-body">Retail, commercial and hospitality fitouts — concept to completion.</p><p class="foot-lic">Licensed in VIC, QLD, SA, ACT and WA.</p></div>
+        <div><div class="foot-heading">Services</div><ul class="foot-links"><li><a href="#">Retail Fitouts</a></li><li><a href="#">Commercial Fitouts</a></li><li><a href="#">Hospitality Fitouts</a></li><li><a href="#">Partners</a></li></ul></div>
+        <div><div class="foot-heading">Contact</div><ul class="foot-links"><li><a href="#">hello@hallmarcfitouts.com.au</a></li><li><a href="#">hallmarcfitouts.com.au</a></li></ul></div>
+      </div>
+      <div class="foot-bottom"><span class="foot-copy">© 2026 Hallmarc National Fitouts.</span><span class="foot-copy">VIC · QLD · SA · ACT · WA</span></div>
+    </div>
+  </footer>
+</div>
+
+<script>
+function showPage(id) {
+  document.querySelectorAll('.page-section').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.ps-btn').forEach(el => el.classList.remove('active'));
+  document.getElementById('page-' + id).classList.add('active');
+  event.target.classList.add('active');
+  window.scrollTo(0, 0);
+}
+</script>
+</body>
+</html>
