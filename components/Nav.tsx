@@ -19,7 +19,7 @@ export default function Nav() {
 
   return (
     <header className="fixed top-0 inset-x-0 z-50 px-4 pt-4">
-      <div className="max-w-7xl mx-auto h-14 pl-4 pr-3 flex items-center justify-between rounded-full bg-black/85 backdrop-blur-md ring-1 ring-white/10 shadow-lg shadow-black/30">
+      <div className="max-w-7xl mx-auto h-14 pl-4 pr-3 flex items-center justify-between rounded-full bg-black/95 backdrop-blur-md ring-1 ring-white/15 shadow-lg shadow-black/40">
 
         {/* Wordmark */}
         <Link href="/" className="flex items-center gap-2.5">
