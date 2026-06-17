@@ -49,10 +49,8 @@ export default function Nav() {
               <Link
                 key={href}
                 href={href}
-                className={[
-                  "text-sm font-medium transition-colors relative",
-                  active ? "text-terra" : "text-white hover:text-terra",
-                ].join(" ")}
+                style={{ color: active ? "#B5502A" : "#FFFFFF" }}
+                className="text-sm font-semibold transition-opacity relative hover:opacity-70"
               >
                 {label}
               </Link>
