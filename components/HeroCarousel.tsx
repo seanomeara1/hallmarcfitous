@@ -41,7 +41,7 @@ export default function HeroCarousel() {
   }, [current, goTo]);
 
   return (
-    <section className="relative min-h-[560px] lg:min-h-[700px] overflow-hidden flex items-center">
+    <section className="relative min-h-[560px] lg:min-h-[700px] overflow-hidden flex items-center bg-black">
       {/* Slides */}
       {SLIDES.map((slide, i) => (
         <div
@@ -53,12 +53,13 @@ export default function HeroCarousel() {
             src={slide.src}
             alt={slide.alt}
             fill
-            priority={i === 0}
+            priority
+            quality={65}
             sizes="100vw"
             className="object-cover object-center"
           />
-          {/* Dark overlay */}
-          <div className="absolute inset-0 bg-black/40" />
+          {/* Gradient overlay for text legibility */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/45 to-black/20" />
         </div>
       ))}
 

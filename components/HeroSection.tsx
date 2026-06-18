@@ -29,13 +29,14 @@ export default function HeroSection({
   const alignClass = textAlign === "left" ? "items-start text-left" : "items-center text-center";
 
   return (
-    <section className={`relative flex ${alignClass} justify-center ${minHeight} overflow-hidden`}>
+    <section className={`relative flex ${alignClass} justify-center ${minHeight} overflow-hidden bg-black`}>
       {/* Background image */}
       <Image
         src={imageSrc}
         alt={imageAlt}
         fill
         priority
+        quality={65}
         sizes="100vw"
         className="object-cover object-center"
       />
