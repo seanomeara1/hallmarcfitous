@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import HeroSection from "@/components/HeroSection";
+import AwardsBanner from "@/components/AwardsBanner";
 import SectionLabel from "@/components/SectionLabel";
 import ProjectGrid from "@/components/ProjectGrid";
 import EnquiryForm from "@/components/EnquiryForm";
@@ -32,8 +33,8 @@ const CAPABILITIES = [
 ];
 
 const CLIENTS = [
-  "Stylerunner", "Nudie Jeans", "DISSH", "Kate Spade", "Hugo Boss",
-  "Lovisa", "Peter Alexander", "Honey Birdette", "X&O",
+  "Stylerunner", "Nudie Jeans", "Just Jeans", "Vodafone", "DISSH",
+  "Kate Spade", "Hugo Boss", "Lovisa", "Peter Alexander", "Honey Birdette", "X&O",
 ];
 
 export default function RetailPage() {
@@ -49,6 +50,9 @@ export default function RetailPage() {
         primaryCTA={{ label: "Start your project", href: "#enquire" }}
         overlayOpacity={35}
       />
+
+      {/* Awards banner */}
+      <AwardsBanner />
 
       {/* Intro */}
       <section className="bg-cream py-20 lg:py-28">

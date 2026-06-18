@@ -19,7 +19,7 @@ const TECH_TAGS = [
 ];
 
 const CLIENTS = [
-  "Zambrero", "The Terminus Hotel", "The King Hotel",
+  "Grill'd", "Zambrero", "The Terminus Hotel", "The King Hotel",
   "RSL NSW", "TAB", "Zarraffa's Coffee",
 ];
 

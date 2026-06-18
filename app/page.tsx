@@ -6,6 +6,7 @@ import ProjectGrid from "@/components/ProjectGrid";
 import VerticalCard from "@/components/VerticalCard";
 import SectionLabel from "@/components/SectionLabel";
 import EnquiryForm from "@/components/EnquiryForm";
+import AwardsBanner from "@/components/AwardsBanner";
 
 export const metadata: Metadata = {
   title: { absolute: "Retail, Commercial & Hospitality Fitouts | Hallmarc National Fitouts" },
@@ -52,9 +53,9 @@ const DIFFERENTIATORS = [
 ];
 
 const CLIENT_LOGOS = [
-  "Stylerunner", "DISSH", "Nudie Jeans", "Kate Spade", "Hugo Boss",
-  "Lovisa", "Peter Alexander", "Honey Birdette", "Zambrero",
-  "The Terminus Hotel", "RSL NSW", "TAB",
+  "Stylerunner", "DISSH", "Nudie Jeans", "Just Jeans", "Vodafone",
+  "Kate Spade", "Hugo Boss", "Lovisa", "Peter Alexander", "Honey Birdette",
+  "Grill'd", "Zambrero", "The Terminus Hotel", "RSL NSW", "TAB",
 ];
 
 export default function HomePage() {
@@ -65,6 +66,9 @@ export default function HomePage() {
 
       {/* 2. Stats bar */}
       <StatsBar />
+
+      {/* 2b. Awards banner */}
+      <AwardsBanner />
 
       {/* 3. Featured project grid */}
       <section className="bg-cream py-20 lg:py-28">
