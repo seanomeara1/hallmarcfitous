@@ -8,7 +8,7 @@ import SectionLabel from "@/components/SectionLabel";
 import EnquiryForm from "@/components/EnquiryForm";
 
 export const metadata: Metadata = {
-  title: { absolute: "Retail, Commercial & Hospitality Fitouts | Hallmarc Fitouts" },
+  title: { absolute: "Retail, Commercial & Hospitality Fitouts | Hallmarc National Fitouts" },
 };
 
 const FEATURED_PROJECTS = [

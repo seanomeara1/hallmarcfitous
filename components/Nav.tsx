@@ -37,7 +37,7 @@ export default function Nav() {
             hallmarc
           </span>
           <span className="text-white/50 text-[10px] tracking-[0.2em] uppercase self-end mb-1 hidden sm:block">
-            Fitouts
+            National Fitouts
           </span>
         </Link>
 

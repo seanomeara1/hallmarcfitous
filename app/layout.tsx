@@ -5,14 +5,14 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: {
-    default: "Retail, Commercial & Hospitality Fitouts | Hallmarc Fitouts",
-    template: "%s | Hallmarc Fitouts",
+    default: "Retail, Commercial & Hospitality Fitouts | Hallmarc National Fitouts",
+    template: "%s | Hallmarc National Fitouts",
   },
   description:
     "Turnkey retail, commercial and hospitality fitouts — senior-led, with in-house joinery and licensed across Australia. Spaces built to be remembered.",
   metadataBase: new URL("https://www.hallmarcfitouts.com.au"),
   openGraph: {
-    siteName: "Hallmarc Fitouts",
+    siteName: "Hallmarc National Fitouts",
     locale: "en_AU",
     type: "website",
   },

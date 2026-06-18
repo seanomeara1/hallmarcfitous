@@ -15,7 +15,7 @@ export default function Footer() {
               hallmarc
             </p>
             <p className="text-[10px] tracking-[0.2em] uppercase text-grey mb-4">
-              Fitouts
+              National Fitouts
             </p>
             <p className="text-sm leading-relaxed">
               Retail, commercial and hospitality fitouts — concept to completion.
@@ -78,7 +78,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="mt-12 pt-8 border-t border-dark flex flex-col sm:flex-row justify-between gap-3 text-xs text-grey/60">
-          <p>© {new Date().getFullYear()} Hallmarc Fitouts. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Hallmarc National Fitouts. All rights reserved.</p>
           <p>Building licences held across VIC, QLD, SA, ACT and WA.</p>
         </div>
       </div>
