@@ -140,11 +140,18 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
     }
 
-    // Fire both in parallel — don't block on either
-    await Promise.allSettled([
+    const [attioResult] = await Promise.allSettled([
       upsertAttioContact(lead),
       sendEmails(lead),
     ]);
+
+    if (attioResult.status === "rejected") {
+      console.error("[/api/leads] Attio failed:", attioResult.reason);
+      return NextResponse.json(
+        { success: false, error: String(attioResult.reason) },
+        { status: 502 },
+      );
+    }
 
     return NextResponse.json({ success: true }, { status: 200 });
   } catch (err) {
