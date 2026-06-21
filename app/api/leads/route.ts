@@ -28,22 +28,22 @@ async function upsertAttioContact(lead: LeadPayload) {
   const fullName = `${lead.firstName} ${lead.lastName ?? ""}`.trim();
   const attributes: Record<string, unknown> = {
     name: [{ first_name: lead.firstName, last_name: lead.lastName ?? "", full_name: fullName }],
-    email_addresses: [{ email_address: lead.email }],
-    ...(lead.phone && { phone_numbers: [{ original_phone_number: normalizeAuPhone(lead.phone) }] }),
+    email_addresses: [lead.email],
+    ...(lead.phone && { phone_numbers: [normalizeAuPhone(lead.phone)] }),
   };
 
   // Upsert person record
-  const personRes = await fetch("https://api.attio.com/v2/objects/people/records", {
-    method: "PUT",
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-      "Content-Type": "application/json",
+  const personRes = await fetch(
+    "https://api.attio.com/v2/objects/people/records?matching_attribute=email_addresses",
+    {
+      method: "PUT",
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ data: { values: attributes } }),
     },
-    body: JSON.stringify({
-      data: { values: attributes },
-      matching_attribute: "email_addresses",
-    }),
-  });
+  );
 
   if (!personRes.ok) {
     const err = await personRes.text();
