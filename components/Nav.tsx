@@ -12,6 +12,7 @@ const INDUSTRIES = [
 ];
 
 const NAV_LINKS = [
+  { href: "/projects",  label: "Projects" },
   { href: "/partners",  label: "Partners" },
   { href: "/about",     label: "About" },
   { href: "/resources", label: "Resources" },

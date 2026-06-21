@@ -82,7 +82,7 @@ export default function HeroCarousel() {
             Start your project
           </Link>
           <Link
-            href="/retail"
+            href="/projects"
             className="bg-white text-black text-sm font-medium px-8 py-3.5 rounded-sm hover:bg-white/90 transition-colors tracking-wide"
           >
             View projects
