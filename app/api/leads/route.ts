@@ -13,15 +13,23 @@ interface LeadPayload {
   utmSource?: string;
 }
 
+function normalizeAuPhone(raw: string): string {
+  const d = raw.replace(/[^\d+]/g, "");
+  if (d.startsWith("+")) return d;
+  if (d.startsWith("0")) return "+61" + d.slice(1);
+  if (d.startsWith("61")) return "+" + d;
+  return "+61" + d;
+}
+
 async function upsertAttioContact(lead: LeadPayload) {
   const apiKey = process.env.ATTIO_API_KEY;
   if (!apiKey) throw new Error("ATTIO_API_KEY not set");
 
+  const fullName = `${lead.firstName} ${lead.lastName ?? ""}`.trim();
   const attributes: Record<string, unknown> = {
-    first_name:    lead.firstName,
-    last_name:     lead.lastName ?? "",
+    name: [{ first_name: lead.firstName, last_name: lead.lastName ?? "", full_name: fullName }],
     email_addresses: [{ email_address: lead.email }],
-    ...(lead.phone && { phone_numbers: [{ phone_number: lead.phone, attribute_type: "phone-number" }] }),
+    ...(lead.phone && { phone_numbers: [{ original_phone_number: normalizeAuPhone(lead.phone) }] }),
   };
 
   // Upsert person record
@@ -48,6 +56,9 @@ async function upsertAttioContact(lead: LeadPayload) {
   // Add note with enquiry details
   if (recordId) {
     const noteBody = [
+      `Name: ${fullName}`,
+      `Email: ${lead.email}`,
+      lead.phone ? `Phone: ${lead.phone}` : "",
       `Enquiry Type: ${lead.enquiryType}`,
       `Source: ${lead.source}`,
       lead.utmCampaign ? `Campaign: ${lead.utmCampaign}` : "",
@@ -65,6 +76,7 @@ async function upsertAttioContact(lead: LeadPayload) {
           parent_object: "people",
           parent_record_id: recordId,
           title: `Website enquiry — ${lead.enquiryType}`,
+          format: "plaintext",
           content: noteBody,
         },
       }),
