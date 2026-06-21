@@ -164,6 +164,12 @@ export default function HomePage() {
         </div>
         <div className="max-w-xl mx-auto px-6 lg:px-8">
           <EnquiryForm enquiryType="General" />
+          <p className="text-white/80 text-sm text-center mt-6">
+            Prefer to email or call?{" "}
+            <a href="mailto:hello@hallmarcfitouts.com.au" className="underline hover:text-white">hello@hallmarcfitouts.com.au</a>
+            {" "}or{" "}
+            <a href="tel:+61755715551" className="underline hover:text-white">(07) 5571 5551</a>
+          </p>
         </div>
       </section>
     </>

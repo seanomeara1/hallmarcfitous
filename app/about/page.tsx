@@ -38,6 +38,7 @@ const TEAM: Member[] = [
     name: "Searah Scott",
     role: "Project Coordinator",
     bio: "Keeps projects moving — coordinating documentation, approvals and the detail that keeps delivery on track.",
+    image: "/images/team/searah.jpg",
   },
   {
     name: "Carolyn Maroney",

@@ -49,6 +49,11 @@ export default function Footer() {
             </p>
             <ul className="space-y-2 text-sm">
               <li>
+                <a href="tel:+61755715551" className="hover:text-white transition-colors">
+                  (07) 5571 5551
+                </a>
+              </li>
+              <li>
                 <a href="mailto:hello@hallmarcfitouts.com.au" className="hover:text-white transition-colors">
                   hello@hallmarcfitouts.com.au
                 </a>
@@ -57,6 +62,9 @@ export default function Footer() {
                 <a href="https://hallmarcfitouts.com.au" className="hover:text-white transition-colors">
                   hallmarcfitouts.com.au
                 </a>
+              </li>
+              <li className="text-grey/80 pt-1 leading-relaxed">
+                Unit 2/2 Inventory Court,<br />Arundel QLD 4214
               </li>
             </ul>
             <p className="text-xs mt-6 text-grey/60">
@@ -75,6 +83,19 @@ export default function Footer() {
               </a>
             </div>
           </div>
+        </div>
+
+        {/* Location map */}
+        <div className="mt-12 rounded-lg overflow-hidden ring-1 ring-white/10">
+          <iframe
+            title="Hallmarc National Fitouts — Arundel QLD"
+            src="https://www.google.com/maps?q=Unit%202%2F2%20Inventory%20Court,%20Arundel%20QLD%204214&output=embed"
+            width="100%"
+            height="280"
+            loading="lazy"
+            style={{ border: 0 }}
+            referrerPolicy="no-referrer-when-downgrade"
+          />
         </div>
 
         {/* Bottom bar */}
