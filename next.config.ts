@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
     formats: ["image/avif", "image/webp"],
     remotePatterns: [
       { protocol: "https", hostname: "images.squarespace-cdn.com" },
+      { protocol: "https", hostname: "res.cloudinary.com" },
     ],
   },
 };

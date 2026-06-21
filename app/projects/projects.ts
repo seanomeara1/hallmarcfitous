@@ -12,7 +12,6 @@ export interface Project {
   video?: string; // YouTube/Vimeo embed URL
 }
 
-const B = "https://images.squarespace-cdn.com/content/v1/67280211d7c97448975a8636/";
 
 export const PROJECTS: Project[] = [
   {
@@ -26,11 +25,11 @@ export const PROJECTS: Project[] = [
     solution: "We leveraged our long-term partnership with Accent Group to execute a precision build focused on seamless fashion-functionality integration.",
     outcome: "A 100% defect-free handover by the due date — positioning Hallmarc to complete multiple ongoing projects with the parent group.",
     images: [
-      B + "802b00f4-e4d0-4fbb-a776-52b90ed30fa0/style+runner+TESS+LEHMAN-7.jpg",
-      B + "383780d2-e6c8-4ae7-83e5-b5871e4f6ce2/style+runner+TESS+LEHMAN-14.jpg",
-      B + "d3553e17-c9e6-4682-83b0-233b23a9e458/style+runner+TESS+LEHMAN-31.jpg",
-      B + "f7960c33-2989-4e7d-8ee6-0400a604d56e/style+runner+TESS+LEHMAN-38.jpg",
-      B + "61256280-41c3-4404-849c-710be4902b79/style+runner+TESS+LEHMAN-45.jpg",
+      "https://res.cloudinary.com/dp77cjpmn/image/upload/f_auto,q_auto/v1/hallmarc/projects/e537c253f123a94b?_a=BAMAPqa80",
+      "https://res.cloudinary.com/dp77cjpmn/image/upload/f_auto,q_auto/v1/hallmarc/projects/154c74be5631fd80?_a=BAMAPqa80",
+      "https://res.cloudinary.com/dp77cjpmn/image/upload/f_auto,q_auto/v1/hallmarc/projects/033547e5d10779a3?_a=BAMAPqa80",
+      "https://res.cloudinary.com/dp77cjpmn/image/upload/f_auto,q_auto/v1/hallmarc/projects/500b15c251fce961?_a=BAMAPqa80",
+      "https://res.cloudinary.com/dp77cjpmn/image/upload/f_auto,q_auto/v1/hallmarc/projects/ebb0f0ac06484df0?_a=BAMAPqa80",
     ],
   },
   {
@@ -44,12 +43,12 @@ export const PROJECTS: Project[] = [
     solution: "We sourced and installed specialty sustainable materials through clear communication and artisanal problem-solving.",
     outcome: "Global-stage results — the fitout was featured in INDESIGNLIVE and longlisted for the 2024 Dezeen Awards for sustainable interiors.",
     images: [
-      B + "bf574f93-05ef-431b-9e7f-cdf56442efbf/X%2BO+001.jpg",
-      B + "d598519d-cc23-4bb0-8db6-24276ab7bca2/X%2BO+028.jpg",
-      B + "f83ea72f-3e30-48b3-ac81-19b2e36f361f/X%2BO+002.jpg",
-      B + "aabf7d1f-3123-4dbe-a176-a2dc1d723225/X%2BO+017.jpg",
-      B + "62a2c671-9079-4619-b2d7-2dde22233250/X%2BO+020.jpg",
-      B + "8be81593-2971-46b1-bd47-98bd6f716daf/X%2BO+072.jpg",
+      "https://res.cloudinary.com/dp77cjpmn/image/upload/f_auto,q_auto/v1/hallmarc/projects/d4c2fd5891d4b344?_a=BAMAPqa80",
+      "https://res.cloudinary.com/dp77cjpmn/image/upload/f_auto,q_auto/v1/hallmarc/projects/19082e7c528329ea?_a=BAMAPqa80",
+      "https://res.cloudinary.com/dp77cjpmn/image/upload/f_auto,q_auto/v1/hallmarc/projects/c369544cce113e5b?_a=BAMAPqa80",
+      "https://res.cloudinary.com/dp77cjpmn/image/upload/f_auto,q_auto/v1/hallmarc/projects/62e6c9cb11060b78?_a=BAMAPqa80",
+      "https://res.cloudinary.com/dp77cjpmn/image/upload/f_auto,q_auto/v1/hallmarc/projects/fe380c380992bc7c?_a=BAMAPqa80",
+      "https://res.cloudinary.com/dp77cjpmn/image/upload/f_auto,q_auto/v1/hallmarc/projects/b392013737fa491d?_a=BAMAPqa80",
     ],
   },
   {
@@ -63,12 +62,12 @@ export const PROJECTS: Project[] = [
     solution: "Working to the architectural design and specifications, the Hallmarc team seamlessly pivoted to accommodate design changes — re-quoting swiftly and securing council approvals while maintaining the schedule. We delivered two weeks early and under budget.",
     outcome: "An immersive space brimming with light, texture and elegance — a space that makes employees want to stay, and where they feel inspired to do their best work.",
     images: [
-      B + "41b48cfb-2cbe-4211-9a0d-d657c1e952e3/Pro+Pics+%2829%29.jpg",
-      B + "b8c7bcce-7d82-46cc-806f-2320733663c1/Pro+Pics+%284%29.jpg",
-      B + "4e198f87-3687-4073-af09-64c9e79b7eb2/Pro+Pics+%289%29.jpg",
-      B + "ebfb9cb2-45c3-40d1-a7de-0e3ce0689313/Pro+Pics+%2813%29.jpg",
-      B + "0a030da4-c01a-40e2-8c70-578f48d7e863/Pro+Pics+%2815%29.jpg",
-      B + "a43b70c5-45b7-401e-9546-4663153ecc9c/Pro+Pics+%2834%29.jpg",
+      "https://res.cloudinary.com/dp77cjpmn/image/upload/f_auto,q_auto/v1/hallmarc/projects/1e8ec59a873c1cca?_a=BAMAPqa80",
+      "https://res.cloudinary.com/dp77cjpmn/image/upload/f_auto,q_auto/v1/hallmarc/projects/6b05b6b63b862977?_a=BAMAPqa80",
+      "https://res.cloudinary.com/dp77cjpmn/image/upload/f_auto,q_auto/v1/hallmarc/projects/c54995372d687649?_a=BAMAPqa80",
+      "https://res.cloudinary.com/dp77cjpmn/image/upload/f_auto,q_auto/v1/hallmarc/projects/1de418fe825ff33f?_a=BAMAPqa80",
+      "https://res.cloudinary.com/dp77cjpmn/image/upload/f_auto,q_auto/v1/hallmarc/projects/7543573cc83967c6?_a=BAMAPqa80",
+      "https://res.cloudinary.com/dp77cjpmn/image/upload/f_auto,q_auto/v1/hallmarc/projects/04630281ba6c3787?_a=BAMAPqa80",
     ],
   },
   {
@@ -81,7 +80,7 @@ export const PROJECTS: Project[] = [
     challenge: "Deliver a complex commercial display environment within a fixed 4.5-week program, coordinating all trades and maintaining design integrity.",
     solution: "Our senior-led team managed trades, program constraints and the client's design vision within a fixed timeframe.",
     outcome: "Display suite delivered on time, on budget, and to the standard the developer required to launch to market.",
-    images: [B + "7a70533b-860f-451d-b467-e00f791a072b/eveleigh.png"],
+    images: ["https://res.cloudinary.com/dp77cjpmn/image/upload/f_auto,q_auto/v1/hallmarc/projects/fed0c4519d6fa0fa?_a=BAMAPqa80"],
   },
   {
     slug: "zambrero",
@@ -94,11 +93,11 @@ export const PROJECTS: Project[] = [
     solution: "Since installing our first Zambrero site in 2021, our senior team has provided a level of calmness and concise communication to navigate the high-pressure rollout schedule.",
     outcome: "Hallmarc is recognised as a standout in the pack for attention to detail and top-tier finishes that drive brand growth.",
     images: [
-      B + "e4997f0f-52f1-4027-9a11-e219142d256c/Zambreros+10.JPG",
-      B + "ca387d73-9db9-4f55-8d25-3ca79bb0f85a/Zambreros+2.JPG",
-      B + "a8774e4a-6949-48b2-b7e8-89a3cc7d90bf/Zambreros+15.JPG",
-      B + "10dca568-2ae2-4d7d-b9aa-b6855a2c2468/Zambreros+5.JPG",
-      B + "64be0c1d-4d95-41ee-a39b-911ab09be16b/Zambreros+6.JPG",
+      "https://res.cloudinary.com/dp77cjpmn/image/upload/f_auto,q_auto/v1/hallmarc/projects/3f66daeffd0771c4?_a=BAMAPqa80",
+      "https://res.cloudinary.com/dp77cjpmn/image/upload/f_auto,q_auto/v1/hallmarc/projects/6b0ed27703ae984a?_a=BAMAPqa80",
+      "https://res.cloudinary.com/dp77cjpmn/image/upload/f_auto,q_auto/v1/hallmarc/projects/c7cb6d41cd74785c?_a=BAMAPqa80",
+      "https://res.cloudinary.com/dp77cjpmn/image/upload/f_auto,q_auto/v1/hallmarc/projects/4ede8e81e3ee20f3?_a=BAMAPqa80",
+      "https://res.cloudinary.com/dp77cjpmn/image/upload/f_auto,q_auto/v1/hallmarc/projects/ecfe7fb749d4049f?_a=BAMAPqa80",
     ],
   },
   {
@@ -112,12 +111,12 @@ export const PROJECTS: Project[] = [
     solution: "Consistently demonstrating a commitment to personalised service and the ability to jump through fiery hoops for the curly projects.",
     outcome: "A long-term partnership where Hallmarc remains a foremost choice for shopfitting, thanks to cost-effective and top-notch outcomes.",
     images: [
-      B + "92823011-ee59-48ab-9263-cba58e20374a/03.jpg",
-      B + "5e0a6332-da18-421e-bf4c-9bf3506a87d9/10.jpg",
-      B + "33cf91b0-774f-4155-8c68-4bfb5d52a51d/11.jpg",
-      B + "7b6b00ef-07c9-4ee3-aaa0-c3b767334e65/20.jpg",
-      B + "4c6b1fc7-92a9-47f6-a5a1-447b36a7cb4c/24.jpg",
-      B + "63c99a24-eb77-42ba-8d00-9074e56b397a/28.jpg",
+      "https://res.cloudinary.com/dp77cjpmn/image/upload/f_auto,q_auto/v1/hallmarc/projects/e5f9d6cf1fb4850c?_a=BAMAPqa80",
+      "https://res.cloudinary.com/dp77cjpmn/image/upload/f_auto,q_auto/v1/hallmarc/projects/3d4c08b379116657?_a=BAMAPqa80",
+      "https://res.cloudinary.com/dp77cjpmn/image/upload/f_auto,q_auto/v1/hallmarc/projects/f16cb4a88651ccda?_a=BAMAPqa80",
+      "https://res.cloudinary.com/dp77cjpmn/image/upload/f_auto,q_auto/v1/hallmarc/projects/b9e9d24fc223d100?_a=BAMAPqa80",
+      "https://res.cloudinary.com/dp77cjpmn/image/upload/f_auto,q_auto/v1/hallmarc/projects/e80df2826541196f?_a=BAMAPqa80",
+      "https://res.cloudinary.com/dp77cjpmn/image/upload/f_auto,q_auto/v1/hallmarc/projects/39d9d7a354a24330?_a=BAMAPqa80",
     ],
   },
   {
@@ -131,10 +130,10 @@ export const PROJECTS: Project[] = [
     solution: "We managed the entire project coordination burden, overseeing production adjustments to shield the client from the complexity.",
     outcome: "Delivered on time to an impressed client — a store that captures Australia's youth culture through high-impact design and a community-focused space.",
     images: [
-      B + "c62578dc-a8f4-400e-9484-bf7ba440e715/City+Beach+%281%29.JPG",
-      B + "f6e1a422-befe-4963-bdab-a54a3933f9d7/City+Beach+%2812%29.JPG",
-      B + "a0d8c8cf-7dc8-4e7f-bf95-ee019f10828c/City+Beach+%2813%29.JPG",
-      B + "57a783c3-1a22-41a0-9a65-6f7cb44ffa87/City+Beach+%2843%29+%281%29.JPG",
+      "https://res.cloudinary.com/dp77cjpmn/image/upload/f_auto,q_auto/v1/hallmarc/projects/04ef9107c9d862f7?_a=BAMAPqa80",
+      "https://res.cloudinary.com/dp77cjpmn/image/upload/f_auto,q_auto/v1/hallmarc/projects/05c456282e0d5c8d?_a=BAMAPqa80",
+      "https://res.cloudinary.com/dp77cjpmn/image/upload/f_auto,q_auto/v1/hallmarc/projects/8b549ec1e7baed41?_a=BAMAPqa80",
+      "https://res.cloudinary.com/dp77cjpmn/image/upload/f_auto,q_auto/v1/hallmarc/projects/f7da275ea756606e?_a=BAMAPqa80",
     ],
   },
   {
@@ -148,11 +147,11 @@ export const PROJECTS: Project[] = [
     solution: "Hallmarc oversaw the majority of the build, coordinating structural reinforcement and managing complex concrete modifications. Custom internal cabinetry was delivered alongside bespoke timber-finished windows and doors, crafted to align with the hotel's architectural character.",
     outcome: "A structurally revitalised, design-led hospitality space that balances durability with craftsmanship — reflecting both its historic foundations and a refined contemporary finish.",
     images: [
-      B + "62131a31-d8e8-4921-a990-112a74769d7d/terminus.png",
-      B + "eecd9447-35c7-4135-869e-9bc82829af83/terminus02.jpeg",
-      B + "8b9490bd-c2d6-4c2b-bd2b-13af6577873e/terminus03.jpeg",
-      B + "82817544-ab43-4ab5-a8f4-04624a8a06a6/terminus04.jpeg",
-      B + "42a1f2f0-a4fc-4232-9314-1188d193c333/terminus05.jpeg",
+      "https://res.cloudinary.com/dp77cjpmn/image/upload/f_auto,q_auto/v1/hallmarc/projects/5597c2fc0eb1eb54?_a=BAMAPqa80",
+      "https://res.cloudinary.com/dp77cjpmn/image/upload/f_auto,q_auto/v1/hallmarc/projects/93667ef4df4c4eea?_a=BAMAPqa80",
+      "https://res.cloudinary.com/dp77cjpmn/image/upload/f_auto,q_auto/v1/hallmarc/projects/f4117f13a1869756?_a=BAMAPqa80",
+      "https://res.cloudinary.com/dp77cjpmn/image/upload/f_auto,q_auto/v1/hallmarc/projects/011069b75bdbeca4?_a=BAMAPqa80",
+      "https://res.cloudinary.com/dp77cjpmn/image/upload/f_auto,q_auto/v1/hallmarc/projects/279e12c9811b0192?_a=BAMAPqa80",
     ],
   },
   {
@@ -166,11 +165,11 @@ export const PROJECTS: Project[] = [
     solution: "Hallmarc approached the fitout with meticulous attention to staging and coordination. We delivered custom joinery aligned with the delicate, sculptural design language, integrating crafted mood lighting to enhance product displays and ambiance, and coordinating trades for seamless transitions between installation stages.",
     outcome: "An unapologetically sensual and engaging retail environment that reflects the Honey Birdette brand — thoughtfully crafted detailing, dynamic lighting and bespoke joinery that invite customers to linger longer and explore with confidence.",
     images: [
-      B + "d55a2ab7-16e3-45a3-b69f-7cbcfd35b15e/0E9A9949.jpg",
-      B + "97aa2685-04d0-4b90-9d84-6e5f91a03d44/0E9A0113.jpg",
-      B + "666f5875-7718-4a8f-977c-3caf3d42b9e7/0E9A0315.jpg",
-      B + "f37a3925-9d9e-49d8-a530-e5feceb220e0/0E9A0378.jpg",
-      B + "b96937a1-27d0-4bd3-b085-b384a29866b8/0E9A0089.jpg",
+      "https://res.cloudinary.com/dp77cjpmn/image/upload/f_auto,q_auto/v1/hallmarc/projects/da74d6794f5cd16a?_a=BAMAPqa80",
+      "https://res.cloudinary.com/dp77cjpmn/image/upload/f_auto,q_auto/v1/hallmarc/projects/ea0fd198254de15b?_a=BAMAPqa80",
+      "https://res.cloudinary.com/dp77cjpmn/image/upload/f_auto,q_auto/v1/hallmarc/projects/6dd2db7645da0bea?_a=BAMAPqa80",
+      "https://res.cloudinary.com/dp77cjpmn/image/upload/f_auto,q_auto/v1/hallmarc/projects/c5bb472d7267e2d9?_a=BAMAPqa80",
+      "https://res.cloudinary.com/dp77cjpmn/image/upload/f_auto,q_auto/v1/hallmarc/projects/91fb044797b9d5a6?_a=BAMAPqa80",
     ],
   },
   {
@@ -184,11 +183,11 @@ export const PROJECTS: Project[] = [
     solution: "Hallmarc combined lighting strategy, custom joinery and high-quality finishes to shape a space that felt both social and confident. Careful coordination between service trades and design intent guided sightlines, enhanced product visibility and delivered consistency in materiality and brand language. The project was delivered ahead of schedule.",
     outcome: "An inviting retail environment that elevates the customer experience while clearly expressing the brand's identity. The integration of lighting and joinery showcased thousands of products without overwhelming the space — leading to further rollouts for the brand.",
     images: [
-      B + "5026ab50-04b4-49f0-9af9-4b543303cf27/Lovisa+%2816%29.JPG",
-      B + "1730855739508-U8HC7ZT07I9VMR0EXMU6/Lovisa+GOLD+COAST.JPG",
-      B + "062aea6a-f098-4e2b-896f-3bb6fe4ccefa/Lovisa+%283%29.JPG",
-      B + "718e29de-386c-4f12-92a6-e809a9d9d53b/Lovisa+%2811%29.JPG",
-      B + "d17ecb2f-0d01-4991-b2c0-0be6d50af45d/Lovisa+%2821%29.JPG",
+      "https://res.cloudinary.com/dp77cjpmn/image/upload/f_auto,q_auto/v1/hallmarc/projects/94b3751a41ff6543?_a=BAMAPqa80",
+      "https://res.cloudinary.com/dp77cjpmn/image/upload/f_auto,q_auto/v1/hallmarc/projects/06b9a43bfafbe07b?_a=BAMAPqa80",
+      "https://res.cloudinary.com/dp77cjpmn/image/upload/f_auto,q_auto/v1/hallmarc/projects/5b7c5033df5e6090?_a=BAMAPqa80",
+      "https://res.cloudinary.com/dp77cjpmn/image/upload/f_auto,q_auto/v1/hallmarc/projects/5a38a5b416290586?_a=BAMAPqa80",
+      "https://res.cloudinary.com/dp77cjpmn/image/upload/f_auto,q_auto/v1/hallmarc/projects/c58e6f9b559ae851?_a=BAMAPqa80",
     ],
   },
   {
@@ -202,11 +201,11 @@ export const PROJECTS: Project[] = [
     solution: "Hallmarc coordinated joinery, lighting and interior trades to deliver a cohesive result. Custom joinery was manufactured to enhance product display and circulation, while finishes and lighting elevated brand perception. The project was staged to align with the broader centre's logistics, ensuring minimal disruption and programmed handovers.",
     outcome: "A confident, well-resolved environment that reflects the brand's contemporary fashion focus. Thoughtful detailing and coordinated lighting enhance product visibility and customer engagement — a visually compelling, fully functional store that supports both brand identity and operational flow.",
     images: [
-      B + "1730855444207-TC5JDKT3KDQKLBU2EMZJ/INDUSTRIE+INDOOROOPILLY+2.jpg",
-      B + "1a2b9242-ca0b-45a0-b194-7040c4351c30/Pic+10.jpg",
-      B + "405b95d1-d460-499e-ba4d-4fb18cd1182e/Pic+13.jpg",
-      B + "e4f4e549-9163-4b42-afd5-f5b10665dca3/Pic+16.jpg",
-      B + "62c5ce9a-a0a8-44b6-b469-7457f742bb11/Pic+6.jpg",
+      "https://res.cloudinary.com/dp77cjpmn/image/upload/f_auto,q_auto/v1/hallmarc/projects/766bae296430595d?_a=BAMAPqa80",
+      "https://res.cloudinary.com/dp77cjpmn/image/upload/f_auto,q_auto/v1/hallmarc/projects/efeed8b1d8945fd0?_a=BAMAPqa80",
+      "https://res.cloudinary.com/dp77cjpmn/image/upload/f_auto,q_auto/v1/hallmarc/projects/caa077a1a508c7a2?_a=BAMAPqa80",
+      "https://res.cloudinary.com/dp77cjpmn/image/upload/f_auto,q_auto/v1/hallmarc/projects/af3b0610ca837dac?_a=BAMAPqa80",
+      "https://res.cloudinary.com/dp77cjpmn/image/upload/f_auto,q_auto/v1/hallmarc/projects/a3fbe14d1e4cde22?_a=BAMAPqa80",
     ],
   },
 ];
