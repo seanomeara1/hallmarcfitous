@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Retail Fitouts",
   description:
     "Retail fitouts that deliver on brand — flagship stores, national rollout programs and brand-compliant fitouts. Licensed across Australia.",
+  alternates: { canonical: "/retail" },
 };
 
 const PROJECTS = [
@@ -66,7 +67,7 @@ export default function RetailPage() {
               >
                 Built to your spec. Delivered nationally.
               </h2>
-              <p className="text-grey leading-relaxed">
+              <p className="text-ink leading-relaxed">
                 From concept through to completion, we manage every aspect of your retail fitout —
                 design coordination, procurement, shopfitting, joinery, signage and compliance.
                 Our in-house joinery manufacturing gives us quality control and speed that most
@@ -99,7 +100,7 @@ export default function RetailPage() {
           <div className="mb-12">
             <SectionLabel>Capabilities</SectionLabel>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
             {CAPABILITIES.map((c) => (
               <div key={c.title}>
                 <div className="w-10 h-1 bg-terra mb-5" />
@@ -109,7 +110,7 @@ export default function RetailPage() {
                 >
                   {c.title}
                 </h3>
-                <p className="text-grey text-sm leading-relaxed">{c.body}</p>
+                <p className="text-ink text-sm leading-relaxed">{c.body}</p>
               </div>
             ))}
           </div>
@@ -127,7 +128,7 @@ export default function RetailPage() {
             >
               Tell us about your store.
             </h2>
-            <p className="text-grey">Single site or national rollout — we'd love to hear about it.</p>
+            <p className="text-ink">Single site or national rollout — we'd love to hear about it.</p>
           </div>
           <EnquiryForm enquiryType="Retail" />
         </div>

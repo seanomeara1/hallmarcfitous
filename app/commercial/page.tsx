@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Commercial Fitouts",
   description:
     "Commercial fitouts built to impress — corporate workplaces, developer display suites, health, education and government. Licensed across Australia.",
+  alternates: { canonical: "/commercial" },
 };
 
 const SECTORS = [
@@ -48,7 +49,7 @@ export default function CommercialPage() {
               >
                 Every sector. One standard of delivery.
               </h2>
-              <p className="text-grey leading-relaxed">
+              <p className="text-ink leading-relaxed">
                 We deliver across a broad range of commercial sectors — from fast-tracked developer display
                 suites to complex health and education fitouts. In-house joinery, senior PM oversight
                 and national building licences mean we can deliver anywhere, at any scale.
@@ -124,7 +125,7 @@ export default function CommercialPage() {
             >
               Tell us about your project.
             </h2>
-            <p className="text-grey">
+            <p className="text-ink">
               From a single tenancy to a multi-floor corporate HQ — we'd like to hear about it.
             </p>
           </div>

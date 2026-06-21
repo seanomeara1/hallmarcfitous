@@ -68,14 +68,15 @@ export default function EnquiryForm({ enquiryType }: EnquiryFormProps) {
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <input name="firstName" required placeholder="First name" className={inputClass} />
-        <input name="lastName"  placeholder="Last name"  className={inputClass} />
+        <input name="firstName" required placeholder="First name" aria-label="First name" autoComplete="given-name" className={inputClass} />
+        <input name="lastName"  placeholder="Last name"  aria-label="Last name" autoComplete="family-name" className={inputClass} />
       </div>
-      <input name="email" type="email" required placeholder="Email address" className={inputClass} />
-      <input name="phone" type="tel" placeholder="Phone number" className={inputClass} />
+      <input name="email" type="email" required placeholder="Email address" aria-label="Email address" autoComplete="email" className={inputClass} />
+      <input name="phone" type="tel" placeholder="Phone number" aria-label="Phone number" autoComplete="tel" className={inputClass} />
       <textarea
         name="projectDescription"
         placeholder="Tell us about your project — location, scope, timeline..."
+        aria-label="Tell us about your project"
         rows={4}
         className={inputClass + " resize-none"}
       />

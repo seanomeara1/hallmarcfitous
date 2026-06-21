@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Projects",
   description:
     "Selected retail, commercial and hospitality fitout projects by Hallmarc National Fitouts — Stylerunner, DISSH, the Eveleigh, Zambrero, Terminus Hotel and more.",
+  alternates: { canonical: "/projects" },
 };
 
 export default function ProjectsPage() {
@@ -20,7 +21,7 @@ export default function ProjectsPage() {
         >
           Projects
         </h1>
-        <p className="text-grey text-lg max-w-2xl mb-12">
+        <p className="text-ink text-lg max-w-2xl mb-12">
           A selection of retail, commercial and hospitality fitouts — concept to completion.
         </p>
 
@@ -48,7 +49,7 @@ export default function ProjectsPage() {
                 >
                   {p.title}
                 </h2>
-                <p className="text-grey text-sm mt-1">{p.location}</p>
+                <p className="text-ink text-sm mt-1">{p.location}</p>
               </div>
             </Link>
           ))}

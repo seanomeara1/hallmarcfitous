@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "About Us",
   description:
     "Hallmarc National Fitouts — founded in 2016 by trade-qualified cabinet maker Marcus Hall. Senior-led retail, commercial and hospitality fitouts with in-house joinery. Cm3 certified.",
+  alternates: { canonical: "/about" },
 };
 
 interface Member {
@@ -76,7 +77,7 @@ export default function AboutPage() {
           >
             Fitout delivery, led by people who build.
           </h2>
-          <div className="space-y-5 text-grey text-lg leading-relaxed">
+          <div className="space-y-5 text-ink text-lg leading-relaxed">
             <p>
               Hallmarc National Fitouts was founded in 2016 on a simple belief — that fitout
               delivery should be precise, transparent, and led by people who have actually built
@@ -146,7 +147,7 @@ export default function AboutPage() {
           >
             An experienced, hands-on team.
           </h2>
-          <p className="text-grey text-lg max-w-2xl mb-12">
+          <p className="text-ink text-lg max-w-2xl mb-12">
             From first consultation through to final handover, you deal with one experienced team
             that keeps everything aligned.
           </p>
@@ -176,7 +177,7 @@ export default function AboutPage() {
                     {m.name}
                   </h3>
                   <p className="text-terra text-xs tracking-[0.15em] uppercase mt-1 mb-3">{m.role}</p>
-                  <p className="text-grey text-sm leading-relaxed">{m.bio}</p>
+                  <p className="text-ink text-sm leading-relaxed">{m.bio}</p>
                 </div>
               </div>
             ))}

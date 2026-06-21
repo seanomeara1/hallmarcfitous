@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useRef } from "react";
 
 interface Slide {
   src: string;
@@ -22,26 +22,51 @@ const INTERVAL = 5000;
 
 export default function HeroCarousel() {
   const [current, setCurrent] = useState(0);
-  const [transitioning, setTransitioning] = useState(false);
 
   const goTo = useCallback((index: number) => {
-    if (transitioning) return;
-    setTransitioning(true);
-    setTimeout(() => {
-      setCurrent(index);
-      setTransitioning(false);
-    }, 400);
-  }, [transitioning]);
+    setCurrent((index + SLIDES.length) % SLIDES.length);
+  }, []);
+  const next = useCallback(() => setCurrent((c) => (c + 1) % SLIDES.length), []);
+  const prev = useCallback(() => setCurrent((c) => (c - 1 + SLIDES.length) % SLIDES.length), []);
 
+  // Auto-advance. Keyed on `current` so the timer restarts after any manual
+  // change (tap/swipe/dot) — and uses a functional update so it never stalls.
+  // Skipped for visitors who prefer reduced motion.
   useEffect(() => {
-    const timer = setInterval(() => {
-      goTo((current + 1) % SLIDES.length);
-    }, INTERVAL);
-    return () => clearInterval(timer);
-  }, [current, goTo]);
+    if (typeof window !== "undefined" &&
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return;
+    }
+    const timer = setTimeout(next, INTERVAL);
+    return () => clearTimeout(timer);
+  }, [current, next]);
+
+  // Tap/click or swipe-left → next, swipe-right → prev. Pointer events cover
+  // mouse, touch and pen, so this works on desktop and mobile alike. Vertical
+  // drags are ignored so the page can still scroll normally.
+  const dragStart = useRef<{ x: number; y: number } | null>(null);
+  function onPointerDown(e: React.PointerEvent) {
+    dragStart.current = { x: e.clientX, y: e.clientY };
+  }
+  function onPointerUp(e: React.PointerEvent) {
+    const start = dragStart.current;
+    if (!start) return;
+    dragStart.current = null;
+    // Don't hijack clicks/taps on the buttons or dots.
+    if ((e.target as HTMLElement).closest("a, button")) return;
+    const dx = e.clientX - start.x;
+    const dy = e.clientY - start.y;
+    if (Math.abs(dy) > Math.abs(dx) && Math.abs(dy) > 12) return; // vertical scroll
+    if (dx > 40) prev();
+    else next(); // swipe-left or tap/click
+  }
 
   return (
-    <section className="relative min-h-[560px] lg:min-h-[700px] overflow-hidden flex items-center bg-black">
+    <section
+      className="relative min-h-[560px] lg:min-h-[700px] overflow-hidden flex items-center bg-black select-none cursor-pointer"
+      onPointerDown={onPointerDown}
+      onPointerUp={onPointerUp}
+    >
       {/* Slides */}
       {SLIDES.map((slide, i) => (
         <div
@@ -53,7 +78,8 @@ export default function HeroCarousel() {
             src={slide.src}
             alt={slide.alt}
             fill
-            priority
+            priority={i === 0}
+            loading={i === 0 ? "eager" : "lazy"}
             quality={65}
             sizes="100vw"
             className="object-cover object-center"
@@ -103,8 +129,9 @@ export default function HeroCarousel() {
           <button
             key={i}
             onClick={() => goTo(i)}
-            aria-label={`Slide ${i + 1}`}
-            className="transition-all duration-300"
+            aria-label={`Go to slide ${i + 1}`}
+            aria-current={i === current}
+            className="p-2 -m-1 transition-all duration-300"
           >
             <span
               className={[

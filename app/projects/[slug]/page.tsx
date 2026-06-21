@@ -16,17 +16,26 @@ export async function generateMetadata({
   const { slug } = await params;
   const p = getProject(slug);
   if (!p) return {};
+  const title = `${p.title} — ${p.vertical} Fitout`;
   return {
-    title: `${p.title} — ${p.vertical} Fitout`,
+    title,
     description: p.summary,
+    alternates: { canonical: `/projects/${p.slug}` },
+    openGraph: {
+      title,
+      description: p.summary,
+      url: `/projects/${p.slug}`,
+      type: "article",
+      images: p.images[0] ? [{ url: p.images[0], alt: p.title }] : undefined,
+    },
   };
 }
 
 function Block({ label, body }: { label: string; body: string }) {
   return (
     <div>
-      <p className="text-xs tracking-[0.25em] uppercase text-terra mb-2">{label}</p>
-      <p className="text-grey text-lg leading-relaxed">{body}</p>
+      <h2 className="text-xs tracking-[0.25em] uppercase text-terra mb-2 font-display">{label}</h2>
+      <p className="text-ink text-lg leading-relaxed">{body}</p>
     </div>
   );
 }
@@ -69,7 +78,7 @@ export default async function ProjectPage({
       {/* Details */}
       <section className="bg-cream py-20 lg:py-28">
         <div className="max-w-4xl mx-auto px-6 lg:px-8">
-          <p className="text-xs tracking-[0.25em] uppercase text-terra mb-2">Scope</p>
+          <h2 className="text-xs tracking-[0.25em] uppercase text-terra mb-2 font-display">Scope</h2>
           <p className="text-black text-lg mb-12">{p.scope}</p>
           <div className="space-y-10">
             <Block label="The challenge" body={p.challenge} />

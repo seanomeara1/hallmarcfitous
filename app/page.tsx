@@ -126,7 +126,7 @@ export default function HomePage() {
                 >
                   {d.title}
                 </h3>
-                <p className="text-grey text-sm leading-relaxed">{d.body}</p>
+                <p className="text-ink text-sm leading-relaxed">{d.body}</p>
               </div>
             ))}
           </div>

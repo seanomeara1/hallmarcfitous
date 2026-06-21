@@ -99,10 +99,20 @@ export default function Footer() {
           />
         </div>
 
+        {/* Acknowledgement of Country */}
+        <p className="mt-12 text-xs text-grey/70 leading-relaxed max-w-3xl">
+          Hallmarc acknowledges the Traditional Custodians of the lands on which we live and work
+          across Australia, and pays respect to Elders past and present.
+        </p>
+
         {/* Bottom bar */}
-        <div className="mt-12 pt-8 border-t border-dark flex flex-col sm:flex-row justify-between gap-3 text-xs text-grey/60">
+        <div className="mt-8 pt-8 border-t border-dark flex flex-col sm:flex-row justify-between gap-3 text-xs text-grey/60">
           <p>© {new Date().getFullYear()} Hallmarc National Fitouts. All rights reserved.</p>
-          <p>Building licences held across VIC, QLD, SA, ACT and WA.</p>
+          <div className="flex items-center gap-4">
+            <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <span className="text-grey/40">·</span>
+            <span>Building licences held across VIC, QLD, SA, ACT and WA.</span>
+          </div>
         </div>
       </div>
     </footer>

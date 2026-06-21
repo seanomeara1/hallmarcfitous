@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Partners — Architects, Interior Designers & Project Managers",
   description:
     "A delivery partner for architects, interior designers and project managers. We build what you designed — no substitutions without approval.",
+  alternates: { canonical: "/partners" },
 };
 
 const VALUE_PROPS = [
@@ -90,7 +91,7 @@ export default function PartnersPage() {
                 >
                   {v.title}
                 </h3>
-                <p className="text-grey text-sm leading-relaxed">{v.body}</p>
+                <p className="text-ink text-sm leading-relaxed">{v.body}</p>
               </div>
             ))}
           </div>
@@ -123,7 +124,7 @@ export default function PartnersPage() {
             >
               Let's talk about working together.
             </h2>
-            <p className="text-grey">
+            <p className="text-ink">
               Tell us about your practice and the projects you're working on.
               We'll get back to you within one business day.
             </p>

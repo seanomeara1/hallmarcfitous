@@ -3,7 +3,8 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Capability Decks & Resources",
   description:
-    "Download Hallmarc Fitouts capability decks — company overview plus retail, commercial and hospitality fitout capability.",
+    "Download Hallmarc National Fitouts capability decks — company overview plus retail, commercial and hospitality fitout capability.",
+  alternates: { canonical: "/resources" },
 };
 
 const DECKS = [
@@ -40,7 +41,7 @@ export default function ResourcesPage() {
         >
           Capability decks
         </h1>
-        <p className="text-grey text-lg max-w-2xl mb-12">
+        <p className="text-ink text-lg max-w-2xl mb-12">
           Download our capability decks to share with your team — a closer look at how we
           deliver across each sector, from concept through to completion.
         </p>
@@ -61,7 +62,7 @@ export default function ResourcesPage() {
                 >
                   {d.name}
                 </h2>
-                <p className="text-grey text-sm leading-relaxed mb-6">{d.desc}</p>
+                <p className="text-ink text-sm leading-relaxed mb-6">{d.desc}</p>
               </div>
               <span className="inline-flex items-center gap-2 text-terra text-sm font-medium">
                 Download PDF

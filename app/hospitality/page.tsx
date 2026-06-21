@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: "Hospitality Fitouts",
   description:
     "Front-of-house design and back-of-house engineering for restaurants, pubs, hotels and QSR. Licensed across Australia.",
+  alternates: { canonical: "/hospitality" },
 };
 
 const TECH_TAGS = [
@@ -53,7 +54,7 @@ export default function HospitalityPage() {
             >
               From licensed venues to national QSR programs.
             </h2>
-            <p className="text-grey leading-relaxed">
+            <p className="text-ink leading-relaxed">
               We deliver full fitouts for restaurants, pubs, bars, hotels, cafes and quick-service restaurants
               across Australia. Whether it's a single flagship venue or a multi-site rollout, our team manages
               every trade from DA approval through to handover.
@@ -111,7 +112,7 @@ export default function HospitalityPage() {
                 The Terminus Hotel
               </h3>
               <p className="text-grey leading-relaxed mb-6">
-                Full venue fitout for one of Brisbane's landmark hospitality destinations. We delivered
+                Full venue fitout for one of regional Victoria's landmark hospitality destinations. We delivered
                 front-of-house design, commercial kitchen build, bar service areas, acoustic treatment
                 and all compliance works — on programme, to the operator's exact brief.
               </p>
@@ -146,7 +147,7 @@ export default function HospitalityPage() {
             >
               Tell us about your venue.
             </h2>
-            <p className="text-grey">
+            <p className="text-ink">
               We respond within one business day. Licensed nationally — Cm3 certified.
             </p>
           </div>
