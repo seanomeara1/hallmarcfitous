@@ -26,16 +26,13 @@ const TEAM: Member[] = [
     name: "Jade Hewett",
     role: "General Manager / Head of Estimating",
     bio: "Leads the business day-to-day and heads our estimating — bringing rigour and clarity from the first numbers through to delivery.",
+    image: "/images/team/jade.jpg",
   },
   {
     name: "Zoe Duncombe",
     role: "Project Manager",
     bio: "Manages projects end-to-end, keeping programs, trades and clients aligned through every stage of the build.",
-  },
-  {
-    name: "Andy Farley",
-    role: "Project Manager",
-    bio: "Oversees delivery on the ground, holding sites to program and standard from fit-out through to handover.",
+    image: "/images/team/zoe.jpg",
   },
   {
     name: "Searah Scott",
@@ -43,14 +40,10 @@ const TEAM: Member[] = [
     bio: "Keeps projects moving — coordinating documentation, approvals and the detail that keeps delivery on track.",
   },
   {
-    name: "Jaz Vardey",
-    role: "Project Coordinator",
-    bio: "Supports project delivery and coordination, keeping communication clear across teams and trades.",
-  },
-  {
     name: "Carolyn Maroney",
     role: "Accounts Manager",
     bio: "Manages accounts and keeps the commercial side of every project running smoothly.",
+    image: "/images/team/carolyn.jpg",
   },
 ];
 
