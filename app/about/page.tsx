@@ -21,6 +21,7 @@ const TEAM: Member[] = [
     name: "Marcus Hall",
     role: "Managing Director & Founder",
     bio: "Trade-qualified cabinet maker and shopfitter who started on the tools at 17. Founded Hallmarc in 2016 to deliver fitouts with greater control, clearer communication and real accountability.",
+    image: "/images/team/marcus.png",
   },
   {
     name: "Jade Hewett",
@@ -101,15 +102,13 @@ export default function AboutPage() {
       <section className="bg-black py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="relative aspect-[4/5] w-full max-w-md mx-auto lg:mx-0 rounded-sm overflow-hidden bg-dark">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <span
-                className="text-6xl font-bold text-terra/40"
-                style={{ fontFamily: "GT Eesti Display, Arial Black, sans-serif" }}
-              >
-                MH
-              </span>
-            </div>
-            {/* Replace placeholder above with: <Image src="/images/team/marcus.jpg" alt="Marcus Hall" fill className="object-cover" /> */}
+            <Image
+              src="/images/team/marcus.png"
+              alt="Marcus Hall — Managing Director & Founder"
+              fill
+              className="object-cover object-top"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
           </div>
           <div>
             <SectionLabel>The founder</SectionLabel>
