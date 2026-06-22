@@ -39,8 +39,8 @@ const VERTICALS = [
 
 const DIFFERENTIATORS = [
   {
-    title: "In-house joinery",
-    body: "Our own manufacturing facility means tighter quality control, faster lead times and no substitutions without your approval.",
+    title: "Joinery at our core",
+    body: "Joinery is where we started. We manufacture in-house where it's economically suitable and draw on a vetted national network of cabinet makers and fabricators — premium product under one roof, at any scale.",
   },
   {
     title: "Senior-led delivery",

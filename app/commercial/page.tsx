@@ -51,7 +51,7 @@ export default function CommercialPage() {
               </h2>
               <p className="text-ink leading-relaxed">
                 We deliver across a broad range of commercial sectors — from fast-tracked developer display
-                suites to complex health and education fitouts. In-house joinery, senior PM oversight
+                suites to complex health and education fitouts. Joinery capability, senior PM oversight
                 and national building licences mean we can deliver anywhere, at any scale.
               </p>
             </div>

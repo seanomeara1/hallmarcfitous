@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 
 const TITLE = "Retail, Commercial & Hospitality Fitouts | Hallmarc National Fitouts";
 const DESC =
-  "Turnkey retail, commercial and hospitality fitouts — senior-led, with in-house joinery and licensed across Australia. Spaces built to be remembered.";
+  "Turnkey retail, commercial and hospitality fitouts — senior-led, with joinery at our core and licensed across Australia. Spaces built to be remembered.";
 
 export const metadata: Metadata = {
   title: {
@@ -45,7 +45,7 @@ const jsonLd = {
   image: "https://www.hallmarcfitouts.com.au/images/stylerunner_hero.jpg",
   slogan: "Spaces built to be remembered",
   description:
-    "Turnkey retail, commercial and hospitality fitouts, senior-led with in-house joinery and licensed across Australia.",
+    "Turnkey retail, commercial and hospitality fitouts, senior-led with joinery at our core and licensed across Australia.",
   telephone: "+61755715551",
   email: "hello@hallmarcfitouts.com.au",
   foundingDate: "2016",

@@ -21,7 +21,7 @@ const PROJECTS = [
 const CAPABILITIES = [
   {
     title: "Flagship stores",
-    body: "Single-site flagship fitouts built to brand spec — in-house joinery, premium finishes, zero substitutions without your approval.",
+    body: "Single-site flagship fitouts built to brand spec — premium joinery, quality finishes and no substitutions without your sign-off.",
   },
   {
     title: "Multi-site rollouts",
@@ -70,8 +70,9 @@ export default function RetailPage() {
               <p className="text-ink leading-relaxed">
                 From concept through to completion, we manage every aspect of your retail fitout —
                 design coordination, procurement, shopfitting, joinery, signage and compliance.
-                Our in-house joinery manufacturing gives us quality control and speed that most
-                fitout companies can't match.
+                Joinery is our heritage: manufactured in-house where it's economically suitable and
+                backed by a vetted national network of cabinet makers, giving us the quality control
+                and the scale most fitout companies can't match.
               </p>
             </div>
             {/* Client name strip */}

@@ -131,8 +131,8 @@ export default function HospitalityPage() {
                 trade in between — built to brand standard and tuned for speed of service.
               </p>
               <p className="text-ink leading-relaxed mb-6">
-                We work to tight, fast-tracked programs across national rollouts, with in-house
-                joinery and a senior PM on every site from DA approval through to opening day.
+                We work to tight, fast-tracked programs across national rollouts, with our joinery
+                capability and a senior PM on every site from DA approval through to opening day.
               </p>
               <Link
                 href="/projects/zambrero"

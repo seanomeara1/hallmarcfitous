@@ -14,7 +14,7 @@ const VALUE_PROPS = [
   {
     number: "01",
     title: "Protect design intent",
-    body: "We build what you designed. Our senior trade-qualified team and in-house joinery manufacturing mean no substitutions or shortcuts without your sign-off. Your drawings stay intact.",
+    body: "We build what you designed. Our senior trade-qualified team and joinery expertise — manufactured in-house where suitable, plus a vetted national fabricator network — mean no substitutions or shortcuts without your sign-off. Your drawings stay intact.",
   },
   {
     number: "02",
@@ -67,8 +67,8 @@ export default function PartnersPage() {
               Your delivery partner.<br />Not another contractor.
             </h1>
             <p className="text-cream3 text-lg leading-relaxed">
-              We build what design teams create. Senior-led, licence-backed, with in-house joinery
-              capability to protect your intent from concept through to handover.
+              We build what design teams create. Senior-led, licence-backed, with joinery
+              expertise to protect your intent from concept through to handover.
             </p>
           </div>
         </div>
