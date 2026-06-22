@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 const FEATURED_PROJECTS = [
   { src: "/images/stylerunner_hero.jpg", alt: "Stylerunner retail fitout", label: "Stylerunner", sublabel: "Retail", href: "/projects/stylerunner" },
   { src: "/images/commercial1.jpg",      alt: "DISSH Head Office fitout",   label: "DISSH Head Office",   sublabel: "Commercial", href: "/projects/dissh" },
-  { src: "/images/terminus.png",         alt: "The Terminus Hotel fitout",  label: "The Terminus Hotel",  sublabel: "Hospitality", href: "/projects/terminus" },
+  { src: "/images/terminus.jpg",         alt: "The Terminus Hotel fitout",  label: "The Terminus Hotel",  sublabel: "Hospitality", href: "/projects/terminus" },
 ];
 
 const VERTICALS = [

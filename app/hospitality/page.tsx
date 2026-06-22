@@ -27,7 +27,7 @@ const CLIENTS = [
 ];
 
 const PROJECTS = [
-  { src: "/images/terminus.png",    alt: "The Terminus Hotel",    label: "The Terminus Hotel", sublabel: "Yarrawonga, VIC" },
+  { src: "/images/terminus.jpg",    alt: "The Terminus Hotel",    label: "The Terminus Hotel", sublabel: "Yarrawonga, VIC" },
   { src: "/images/hospofitout.jpg", alt: "Hospitality fitout",    label: "Back-of-house", sublabel: "Commercial kitchen build" },
 ];
 
@@ -36,7 +36,7 @@ export default function HospitalityPage() {
     <>
       {/* Hero */}
       <HeroSection
-        imageSrc="/images/terminus.png"
+        imageSrc="/images/terminus.jpg"
         imageAlt="The Terminus Hotel — Hallmarc hospitality fitout"
         eyebrow="Hospitality"
         headline="Hospitality fitouts that perform."
@@ -166,7 +166,7 @@ export default function HospitalityPage() {
             </div>
             <div className="relative aspect-[16/10] overflow-hidden rounded-sm">
               <Image
-                src="/images/terminus.png"
+                src="/images/terminus.jpg"
                 alt="The Terminus Hotel fitout"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
