@@ -82,13 +82,13 @@ export default function HospitalityPage() {
       <section className="bg-dark py-16">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <p className="text-xs tracking-[0.25em] uppercase text-terra mb-6">
-            Technical expertise
+            Technical coordination
           </p>
           <h3
             className="text-white text-2xl font-bold mb-8"
             style={{ fontFamily: "GT Eesti Display, Arial Black, sans-serif" }}
           >
-            We handle what others sub out.
+            We manage and organise what others don&rsquo;t.
           </h3>
           <div className="flex flex-wrap gap-3">
             {TECH_TAGS.map((tag) => (
@@ -96,8 +96,10 @@ export default function HospitalityPage() {
             ))}
           </div>
           <p className="text-grey text-sm mt-8 max-w-xl leading-relaxed">
-            In-house capability across commercial kitchen design, extraction, hydraulics and 3-phase electrical
-            means no coordination gaps — and a single point of contact from concept through to handover.
+            We coordinate every specialist trade — commercial kitchen design, extraction, hydraulics and
+            3-phase electrical — and own the quality control, programme and client communication across all
+            of them. One point of contact, accountable from concept through to handover, keeping your
+            expectations clear and met at every stage.
           </p>
         </div>
       </section>
