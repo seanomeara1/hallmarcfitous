@@ -87,15 +87,19 @@ export default function AboutPage() {
             <p>
               Joinery is what we started out doing, and it&rsquo;s still at our core. We manufacture
               in-house where it&rsquo;s economically suitable — depending on the location of the site
-              and the requirements of the fitout — and partner with cabinet makers and fabricators
-              across Australia through an extensive, vetted process built on years of relationships
-              in the industry.
+              and the requirements of the fitout.
             </p>
             <p>
-              That blend lets us scale with our clients and offer premium services and products under
-              the one roof — with full turnkey project management, and quality control and
-              communication at the heart of everything we do. One senior-led team, accountable from
-              concept through to completion: no hand-offs to juniors, no substitutions without your sign-off.
+              Beyond the bench, we&rsquo;re a full-service fitout company. We have more than 1,500
+              suppliers and trades on our books — engaged regularly right across Australia through an
+              extensive, vetted process built on years of relationships in the industry — so we can
+              scale with our clients and deliver premium services and products under the one roof.
+            </p>
+            <p>
+              Everything runs as a turnkey solution, led by senior project managers who take real
+              pride in what they do and who they work with — with quality control and communication
+              at the heart of it, and one team accountable from concept through to completion. No
+              hand-offs to juniors, no substitutions without your sign-off.
             </p>
             <p>
               We&rsquo;re Cm3 certified and proud of a spotless safety record — zero site safety

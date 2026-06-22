@@ -40,7 +40,7 @@ const VERTICALS = [
 const DIFFERENTIATORS = [
   {
     title: "Joinery at our core",
-    body: "Joinery is where we started. We manufacture in-house where it's economically suitable and draw on a vetted national network of cabinet makers and fabricators — premium product under one roof, at any scale.",
+    body: "Joinery is where we started. We manufacture in-house where it's economically suitable, backed by a vetted national network of 1,500+ suppliers and trades — premium product under one roof, at any scale.",
   },
   {
     title: "Senior-led delivery",
@@ -53,9 +53,10 @@ const DIFFERENTIATORS = [
 ];
 
 const CLIENT_LOGOS = [
-  "Stylerunner", "DISSH", "Nudie Jeans", "Just Jeans", "Vodafone",
-  "Kate Spade", "Hugo Boss", "Lovisa", "Peter Alexander", "Honey Birdette",
-  "Grill'd", "Zambrero", "The Terminus Hotel", "RSL NSW", "TAB",
+  "Stylerunner", "Nudie Jeans", "Just Jeans", "Jay Jays", "Peter Alexander",
+  "Dotti", "Smiggle", "Portmans", "Jacqui E", "Vodafone", "DISSH",
+  "Kate Spade", "Hugo Boss", "Lovisa", "Honey Birdette", "X+O", "City Beach",
+  "Grill'd", "Just Group", "Zambrero", "Industrie", "TAB",
 ];
 
 export default function HomePage() {

@@ -48,7 +48,7 @@ export default function CounterStat({ value, suffix = "", prefix = "", label }: 
   return (
     <div ref={ref} className="text-center">
       <p className="text-4xl lg:text-5xl font-bold text-terra font-display tabular-nums">
-        {prefix}{count}{suffix}
+        {prefix}{count.toLocaleString()}{suffix}
       </p>
       <p className="text-sm text-grey mt-2 tracking-wide uppercase">{label}</p>
     </div>
