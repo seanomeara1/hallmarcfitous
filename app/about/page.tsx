@@ -17,36 +17,61 @@ interface Member {
   image?: string; // e.g. "/images/team/marcus.jpg"
 }
 
+// Marcus is featured in the founder section above, so he's not repeated here.
 const TEAM: Member[] = [
-  {
-    name: "Marcus Hall",
-    role: "Managing Director & Founder",
-    bio: "Trade-qualified cabinet maker and shopfitter who started on the tools at 17. Founded Hallmarc in 2016 to deliver fitouts with greater control, clearer communication and real accountability.",
-    image: "/images/team/marcus.png",
-  },
   {
     name: "Jade Hewett",
     role: "General Manager / Head of Estimating",
-    bio: "Leads the business day-to-day and heads our estimating — bringing rigour and clarity from the first numbers through to delivery.",
+    bio: "Leads the business day-to-day and heads our estimating — bringing rigour and clarity from the first set of numbers through to delivery.",
     image: "/images/team/jade.jpg",
   },
   {
     name: "Zoe Duncombe",
     role: "Project Manager",
-    bio: "Manages projects end-to-end, keeping programs, trades and clients aligned through every stage of the build.",
+    bio: "Runs projects end-to-end, keeping programmes, trades and clients aligned through every stage of the build — calm, organised and across the detail.",
     image: "/images/team/zoe.jpg",
+  },
+  {
+    name: "Mikael Bisby",
+    role: "Project Manager",
+    bio: "Joined Hallmarc in 2023 with extensive industry experience behind him. Methodical and unflappable, he keeps complex projects running to plan.",
+    image: "/images/team/mikael.jpg",
   },
   {
     name: "Searah Scott",
     role: "Project Coordinator",
-    bio: "Keeps projects moving — coordinating documentation, approvals and the detail that keeps delivery on track.",
+    bio: "Keeps projects moving — coordinating documentation, approvals and the hundred small details that keep delivery on track.",
     image: "/images/team/searah.jpg",
   },
   {
     name: "Carolyn Maroney",
     role: "Accounts Manager",
-    bio: "Manages accounts and keeps the commercial side of every project running smoothly.",
+    bio: "Looks after accounts and keeps the commercial side of every project running smoothly — nothing slips past her.",
     image: "/images/team/carolyn.jpg",
+  },
+  {
+    name: "John ‘Johnno’ Austin",
+    role: "Logistics Manager",
+    bio: "Runs logistics with 25 years across building, construction and set design and builds behind him. Johnno is the one who keeps the team laughing — and our clients adore him.",
+    image: "/images/team/johnno.jpg",
+  },
+  {
+    name: "Aaron Puttock",
+    role: "Cabinet Maker / Joinery Production",
+    bio: "On the tools in our joinery production, turning drawings into precision-made cabinetry on the workshop floor.",
+    image: "/images/team/aaron.jpg",
+  },
+  {
+    name: "Paul Gooch",
+    role: "Cabinet Maker / Joinery Production",
+    bio: "Brings craft and a sharp eye for detail to every piece that comes out of our joinery production.",
+    image: "/images/team/paul.jpg",
+  },
+  {
+    name: "Jay Moore",
+    role: "Cabinet Maker / Joinery Production",
+    bio: "Machining and building the custom joinery our fitouts are known for — precise work, every time.",
+    image: "/images/team/jay.jpg",
   },
 ];
 
@@ -133,7 +158,7 @@ export default function AboutPage() {
             <div className="space-y-5 text-cream3 text-base lg:text-lg leading-relaxed">
               <p>
                 Born and raised in Yarrawonga, country Victoria, Marcus began his trade as a cabinet
-                maker at just 17 in the UK. Over more than 22 years he honed his craft building
+                maker at just 15 in Albury, NSW. Over more than 22 years he honed his craft building
                 custom joinery and delivering complex store fitouts for some of the world&rsquo;s
                 best-known retailers — including IKEA, Sainsbury&rsquo;s and Marks &amp; Spencer —
                 before moving into large-scale commercial and international retail builds.
@@ -159,8 +184,9 @@ export default function AboutPage() {
             An experienced, hands-on team.
           </h2>
           <p className="text-ink text-lg max-w-2xl mb-12">
-            From first consultation through to final handover, you deal with one experienced team
-            that keeps everything aligned.
+            From first consultation through to final handover, you deal with one experienced,
+            hands-on team — estimators, project managers, coordinators and our own joinery crew —
+            who take real pride in their work and the people they do it with.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
