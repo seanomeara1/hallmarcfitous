@@ -6,7 +6,7 @@ import SectionLabel from "@/components/SectionLabel";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Hallmarc National Fitouts — founded in 2016 by trade-qualified cabinet maker Marcus Hall. Senior-led retail, commercial and hospitality fitouts with joinery at our core. Cm3 certified.",
+    "Hallmarc National Fitouts - founded in 2016 by trade-qualified cabinet maker Marcus Hall. Senior-led retail, commercial and hospitality fitouts with joinery at our core. Cm3 certified.",
   alternates: { canonical: "/about" },
 };
 
@@ -22,13 +22,13 @@ const TEAM: Member[] = [
   {
     name: "Jade Hewett",
     role: "General Manager / Head of Estimating",
-    bio: "Leads the business day-to-day and heads our estimating — bringing rigour and clarity from the first set of numbers through to delivery.",
+    bio: "Leads the business day-to-day and heads our estimating - bringing rigour and clarity from the first set of numbers through to delivery.",
     image: "/images/team/jade.jpg",
   },
   {
     name: "Zoe Duncombe",
     role: "Project Manager",
-    bio: "Runs projects end-to-end, keeping programmes, trades and clients aligned through every stage of the build — calm, organised and across the detail.",
+    bio: "Runs projects end-to-end, keeping programmes, trades and clients aligned through every stage of the build - calm, organised and across the detail.",
     image: "/images/team/zoe.jpg",
   },
   {
@@ -40,19 +40,19 @@ const TEAM: Member[] = [
   {
     name: "Searah Scott",
     role: "Project Coordinator",
-    bio: "Keeps projects moving — coordinating documentation, approvals and the hundred small details that keep delivery on track.",
+    bio: "Keeps projects moving - coordinating documentation, approvals and the hundred small details that keep delivery on track.",
     image: "/images/team/searah.jpg",
   },
   {
     name: "Carolyn Maroney",
     role: "Accounts Manager",
-    bio: "Looks after accounts and keeps the commercial side of every project running smoothly — nothing slips past her.",
+    bio: "Looks after accounts and keeps the commercial side of every project running smoothly - nothing slips past her.",
     image: "/images/team/carolyn.jpg",
   },
   {
     name: "John ‘Johnno’ Austin",
     role: "Logistics Manager",
-    bio: "Runs logistics with 25 years across building, construction and set design and builds behind him. Johnno is the one who keeps the team laughing — and our clients adore him.",
+    bio: "Runs logistics with 25 years across building, construction and set design and builds behind him. Johnno is the one who keeps the team laughing - and our clients adore him.",
     image: "/images/team/johnno.jpg",
   },
   {
@@ -70,7 +70,7 @@ const TEAM: Member[] = [
   {
     name: "Jay Moore",
     role: "Cabinet Maker / Joinery Production",
-    bio: "Machining and building the custom joinery our fitouts are known for — precise work, every time.",
+    bio: "Machining and building the custom joinery our fitouts are known for - precise work, every time.",
     image: "/images/team/jay.jpg",
   },
 ];
@@ -104,31 +104,31 @@ export default function AboutPage() {
           </h2>
           <div className="space-y-5 text-ink text-lg leading-relaxed">
             <p>
-              Hallmarc National Fitouts was founded in 2016 on a simple belief — that fitout
+              Hallmarc National Fitouts was founded in 2016 on a simple belief - that fitout
               delivery should be precise, transparent, and led by people who have actually built
               things. We deliver turnkey retail, commercial and hospitality projects, licensed
               across Australia.
             </p>
             <p>
               Joinery is what we started out doing, and it&rsquo;s still at our core. We manufacture
-              in-house where it&rsquo;s economically suitable — depending on the location of the site
+              in-house where it&rsquo;s economically suitable - depending on the location of the site
               and the requirements of the fitout.
             </p>
             <p>
               Beyond the bench, we&rsquo;re a full-service fitout company. We have more than 1,500
-              suppliers and trades on our books — engaged regularly right across Australia through an
-              extensive, vetted process built on years of relationships in the industry — so we can
+              suppliers and trades on our books - engaged regularly right across Australia through an
+              extensive, vetted process built on years of relationships in the industry - so we can
               scale with our clients and deliver premium services and products under the one roof.
             </p>
             <p>
               Everything runs as a turnkey solution, led by senior project managers who take real
-              pride in what they do and who they work with — with quality control and communication
+              pride in what they do and who they work with - with quality control and communication
               at the heart of it, and one team accountable from concept through to completion. No
               hand-offs to juniors, no substitutions without your sign-off.
             </p>
             <p>
-              We&rsquo;re Cm3 certified and proud of a spotless safety record — zero site safety
-              incidents across nine years of operation — and our work has been recognised at the
+              We&rsquo;re Cm3 certified and proud of a spotless safety record - zero site safety
+              incidents across nine years of operation - and our work has been recognised at the
               Interior Fitout Awards, including the 2025 award for Best Fitout under $500,000.
             </p>
           </div>
@@ -141,7 +141,7 @@ export default function AboutPage() {
           <div className="relative aspect-[4/5] w-full max-w-md mx-auto lg:mx-0 rounded-sm overflow-hidden bg-dark">
             <Image
               src="/images/team/marcus.png"
-              alt="Marcus Hall — Managing Director & Founder"
+              alt="Marcus Hall - Managing Director & Founder"
               fill
               className="object-cover object-top"
               sizes="(max-width: 1024px) 100vw, 50vw"
@@ -160,11 +160,11 @@ export default function AboutPage() {
                 Born and raised in Yarrawonga, country Victoria, Marcus began his trade as a cabinet
                 maker at just 15 in Albury, NSW. Over more than 22 years he honed his craft building
                 custom joinery and delivering complex store fitouts for some of the world&rsquo;s
-                best-known retailers — including IKEA, Sainsbury&rsquo;s and Marks &amp; Spencer —
+                best-known retailers - including IKEA, Sainsbury&rsquo;s and Marks &amp; Spencer - 
                 before moving into large-scale commercial and international retail builds.
               </p>
               <p>
-                In 2016 he brought that experience home to found Hallmarc — with a commitment to
+                In 2016 he brought that experience home to found Hallmarc - with a commitment to
                 greater control, clearer communication and a higher standard of accountability. That
                 hands-on, trade-first foundation still defines how the whole team works today.
               </p>
@@ -185,7 +185,7 @@ export default function AboutPage() {
           </h2>
           <p className="text-ink text-lg max-w-2xl mb-12">
             From first consultation through to final handover, you deal with one experienced,
-            hands-on team — estimators, project managers, coordinators and our own joinery crew —
+            hands-on team - estimators, project managers, coordinators and our own joinery crew - 
             who take real pride in their work and the people they do it with.
           </p>
 

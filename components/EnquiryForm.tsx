@@ -57,7 +57,7 @@ export default function EnquiryForm({ enquiryType }: EnquiryFormProps) {
   if (status === "success") {
     return (
       <div className="bg-cream2 border border-cream3 rounded-sm p-8 text-center">
-        <p className="text-black font-bold text-lg mb-2">Thanks — we'll be in touch within one business day.</p>
+        <p className="text-black font-bold text-lg mb-2">Thanks - we'll be in touch within one business day.</p>
         <p className="text-grey text-sm">Marcus or a senior team member will reach out directly.</p>
       </div>
     );
@@ -75,7 +75,7 @@ export default function EnquiryForm({ enquiryType }: EnquiryFormProps) {
       <input name="phone" type="tel" placeholder="Phone number" aria-label="Phone number" autoComplete="tel" className={inputClass} />
       <textarea
         name="projectDescription"
-        placeholder="Tell us about your project — location, scope, timeline..."
+        placeholder="Tell us about your project - location, scope, timeline..."
         aria-label="Tell us about your project"
         rows={4}
         className={inputClass + " resize-none"}

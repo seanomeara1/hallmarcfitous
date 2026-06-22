@@ -18,7 +18,7 @@ export default function Footer() {
               National Fitouts
             </p>
             <p className="text-sm leading-relaxed">
-              Retail, commercial and hospitality fitouts — concept to completion.
+              Retail, commercial and hospitality fitouts - concept to completion.
               Founded 2016 by Marcus Hall.
             </p>
             <p className="text-xs mt-4">
@@ -89,7 +89,7 @@ export default function Footer() {
         {/* Location map */}
         <div className="mt-12 rounded-lg overflow-hidden ring-1 ring-white/10">
           <iframe
-            title="Hallmarc National Fitouts — Arundel QLD"
+            title="Hallmarc National Fitouts - Arundel QLD"
             src="https://www.google.com/maps?q=Unit%202%2F2%20Inventory%20Court,%20Arundel%20QLD%204214&output=embed"
             width="100%"
             height="280"

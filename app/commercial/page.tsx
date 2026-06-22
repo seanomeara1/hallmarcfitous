@@ -8,7 +8,7 @@ import EnquiryForm from "@/components/EnquiryForm";
 export const metadata: Metadata = {
   title: "Commercial Fitouts",
   description:
-    "Commercial fitouts built to impress — corporate workplaces, developer display suites, health, education and government. Licensed across Australia.",
+    "Commercial fitouts built to impress - corporate workplaces, developer display suites, health, education and government. Licensed across Australia.",
   alternates: { canonical: "/commercial" },
 };
 
@@ -29,10 +29,10 @@ export default function CommercialPage() {
       {/* Hero */}
       <HeroSection
         imageSrc="/images/commercial1.jpg"
-        imageAlt="DISSH Head Office — Hallmarc commercial fitout"
+        imageAlt="DISSH Head Office - Hallmarc commercial fitout"
         eyebrow="Commercial"
         headline="Commercial fitouts built to impress."
-        subline="Corporate workplaces, developer display suites, health, education and government — concept to completion."
+        subline="Corporate workplaces, developer display suites, health, education and government - concept to completion."
         primaryCTA={{ label: "Start your project", href: "#enquire" }}
         overlayOpacity={40}
       />
@@ -50,7 +50,7 @@ export default function CommercialPage() {
                 Every sector. One standard of delivery.
               </h2>
               <p className="text-ink leading-relaxed">
-                We deliver across a broad range of commercial sectors — from fast-tracked developer display
+                We deliver across a broad range of commercial sectors - from fast-tracked developer display
                 suites to complex health and education fitouts. Joinery capability, senior PM oversight
                 and national building licences mean we can deliver anywhere, at any scale.
               </p>
@@ -70,7 +70,7 @@ export default function CommercialPage() {
         </div>
       </section>
 
-      {/* Case study — The Eveleigh */}
+      {/* Case study - The Eveleigh */}
       <section className="bg-dark py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
@@ -84,7 +84,7 @@ export default function CommercialPage() {
               </h3>
               <p className="text-grey leading-relaxed mb-4">
                 Developer display suite delivered in{" "}
-                <span className="text-white font-medium">4.5 weeks</span> — from a bare shell to a
+                <span className="text-white font-medium">4.5 weeks</span> - from a bare shell to a
                 fully furnished, presentation-ready suite for one of the Gold Coast's premium
                 residential developments.
               </p>
@@ -126,7 +126,7 @@ export default function CommercialPage() {
               Tell us about your project.
             </h2>
             <p className="text-ink">
-              From a single tenancy to a multi-floor corporate HQ — we'd like to hear about it.
+              From a single tenancy to a multi-floor corporate HQ - we'd like to hear about it.
             </p>
           </div>
           <EnquiryForm enquiryType="Commercial" />

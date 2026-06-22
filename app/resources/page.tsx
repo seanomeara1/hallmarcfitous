@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Capability Decks & Resources",
   description:
-    "Download Hallmarc National Fitouts capability decks — company overview plus retail, commercial and hospitality fitout capability.",
+    "Download Hallmarc National Fitouts capability decks - company overview plus retail, commercial and hospitality fitout capability.",
   alternates: { canonical: "/resources" },
 };
 
@@ -11,7 +11,7 @@ const DECKS = [
   {
     name: "Company Overview",
     file: "/decks/Hallmarc-General.pdf",
-    desc: "Our full capability across retail, commercial and hospitality fitouts — concept to completion.",
+    desc: "Our full capability across retail, commercial and hospitality fitouts - concept to completion.",
   },
   {
     name: "Retail",
@@ -26,7 +26,7 @@ const DECKS = [
   {
     name: "Hospitality",
     file: "/decks/Hallmarc-Hospitality.pdf",
-    desc: "Restaurants, pubs, bars, hotels and QSR — with deep back-of-house technical expertise.",
+    desc: "Restaurants, pubs, bars, hotels and QSR - with deep back-of-house technical expertise.",
   },
 ];
 
@@ -42,7 +42,7 @@ export default function ResourcesPage() {
           Capability decks
         </h1>
         <p className="text-ink text-lg max-w-2xl mb-12">
-          Download our capability decks to share with your team — a closer look at how we
+          Download our capability decks to share with your team - a closer look at how we
           deliver across each sector, from concept through to completion.
         </p>
 

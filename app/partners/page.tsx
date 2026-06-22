@@ -4,9 +4,9 @@ import SectionLabel from "@/components/SectionLabel";
 import EnquiryForm from "@/components/EnquiryForm";
 
 export const metadata: Metadata = {
-  title: "Partners — Architects, Interior Designers & Project Managers",
+  title: "Partners - Architects, Interior Designers & Project Managers",
   description:
-    "A delivery partner for architects, interior designers and project managers. We build what you designed — no substitutions without approval.",
+    "A delivery partner for architects, interior designers and project managers. We build what you designed - no substitutions without approval.",
   alternates: { canonical: "/partners" },
 };
 
@@ -14,12 +14,12 @@ const VALUE_PROPS = [
   {
     number: "01",
     title: "Protect design intent",
-    body: "We build what you designed. Our senior trade-qualified team and joinery expertise — manufactured in-house where suitable, plus a vetted national fabricator network — mean no substitutions or shortcuts without your sign-off. Your drawings stay intact.",
+    body: "We build what you designed. Our senior trade-qualified team and joinery expertise - manufactured in-house where suitable, plus a vetted national fabricator network - mean no substitutions or shortcuts without your sign-off. Your drawings stay intact.",
   },
   {
     number: "02",
     title: "Early-stage input",
-    body: "Involve us at concept stage. We provide buildability advice, cost guidance and programme certainty before you tender — so there are no surprises when the project goes live.",
+    body: "Involve us at concept stage. We provide buildability advice, cost guidance and programme certainty before you tender - so there are no surprises when the project goes live.",
   },
   {
     number: "03",
@@ -32,19 +32,19 @@ const HOW_IT_WORKS = [
   { step: "01", label: "Introduce yourself" },
   { step: "02", label: "We meet and align" },
   { step: "03", label: "Refer a live project" },
-  { step: "04", label: "We deliver — you're kept in the loop" },
+  { step: "04", label: "We deliver - you're kept in the loop" },
 ];
 
 export default function PartnersPage() {
   return (
     <>
-      {/* Hero — text left, image right */}
+      {/* Hero - text left, image right */}
       <section className="bg-dark min-h-[520px] lg:min-h-[580px] relative flex items-center overflow-hidden">
         {/* Right-side image */}
         <div className="absolute right-0 top-0 w-full lg:w-1/2 h-full">
           <Image
             src="/images/commercial1.jpg"
-            alt="Commercial fitout — Hallmarc delivery partner"
+            alt="Commercial fitout - Hallmarc delivery partner"
             fill
             priority
             sizes="(max-width: 1024px) 100vw, 50vw"

@@ -53,7 +53,7 @@ export default function Nav() {
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-7">
-          {/* Industries dropdown — opens on hover (mouse) and click/keyboard (touch/a11y) */}
+          {/* Industries dropdown - opens on hover (mouse) and click/keyboard (touch/a11y) */}
           <div
             className="relative"
             onMouseEnter={() => setIndOpen(true)}

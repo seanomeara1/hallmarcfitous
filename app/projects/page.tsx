@@ -6,7 +6,7 @@ import { PROJECTS } from "./projects";
 export const metadata: Metadata = {
   title: "Projects",
   description:
-    "Selected retail, commercial and hospitality fitout projects by Hallmarc National Fitouts — Stylerunner, DISSH, the Eveleigh, Zambrero, Terminus Hotel and more.",
+    "Selected retail, commercial and hospitality fitout projects by Hallmarc National Fitouts - Stylerunner, DISSH, the Eveleigh, Zambrero, Terminus Hotel and more.",
   alternates: { canonical: "/projects" },
 };
 
@@ -22,7 +22,7 @@ export default function ProjectsPage() {
           Projects
         </h1>
         <p className="text-ink text-lg max-w-2xl mb-12">
-          A selection of retail, commercial and hospitality fitouts — concept to completion.
+          A selection of retail, commercial and hospitality fitouts - concept to completion.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

@@ -37,7 +37,7 @@ export default function HospitalityPage() {
       {/* Hero */}
       <HeroSection
         imageSrc="/images/terminus.jpg"
-        imageAlt="The Terminus Hotel — Hallmarc hospitality fitout"
+        imageAlt="The Terminus Hotel - Hallmarc hospitality fitout"
         eyebrow="Hospitality"
         headline="Hospitality fitouts that perform."
         subline="Front-of-house design. Back-of-house engineering. Delivered by specialists."
@@ -58,7 +58,7 @@ export default function HospitalityPage() {
             </h2>
             <p className="text-ink leading-relaxed">
               We deliver full fitouts for restaurants, pubs, bars, hotels, cafes and quick-service
-              restaurants across Australia — including drive-through QSR programs from canopy and
+              restaurants across Australia - including drive-through QSR programs from canopy and
               menu boards to the kitchen behind them. Whether it's a single flagship venue or a
               national multi-site rollout, our team manages every trade from DA approval through to handover.
             </p>
@@ -96,22 +96,22 @@ export default function HospitalityPage() {
             ))}
           </div>
           <p className="text-grey text-sm mt-8 max-w-xl leading-relaxed">
-            We coordinate every specialist trade — commercial kitchen design, extraction, hydraulics and
-            3-phase electrical — and own the quality control, programme and client communication across all
+            We coordinate every specialist trade - commercial kitchen design, extraction, hydraulics and
+            3-phase electrical - and own the quality control, programme and client communication across all
             of them. One point of contact, accountable from concept through to handover, keeping your
             expectations clear and met at every stage.
           </p>
         </div>
       </section>
 
-      {/* Drive-through QSR — key selling point */}
+      {/* Drive-through QSR - key selling point */}
       <section className="bg-cream py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
             <div className="relative aspect-[4/3] overflow-hidden rounded-sm order-1 lg:order-none">
               <Image
                 src="/images/zambrero-drivethrough.jpg"
-                alt="Zambrero drive-through fitout — canopy, digital menu boards and order lane, Deception Bay"
+                alt="Zambrero drive-through fitout - canopy, digital menu boards and order lane, Deception Bay"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
@@ -126,9 +126,9 @@ export default function HospitalityPage() {
                 Drive-through specialists.
               </h2>
               <p className="text-ink leading-relaxed mb-4">
-                Drive-through is one of our core strengths. We deliver complete QSR sites — canopies
+                Drive-through is one of our core strengths. We deliver complete QSR sites - canopies
                 and order lanes, digital menu boards, the commercial kitchen behind them and every
-                trade in between — built to brand standard and tuned for speed of service.
+                trade in between - built to brand standard and tuned for speed of service.
               </p>
               <p className="text-ink leading-relaxed mb-6">
                 We work to tight, fast-tracked programs across national rollouts, with our joinery
@@ -145,7 +145,7 @@ export default function HospitalityPage() {
         </div>
       </section>
 
-      {/* Featured project — The Terminus */}
+      {/* Featured project - The Terminus */}
       <section className="bg-black">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-20 lg:py-28">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
@@ -160,7 +160,7 @@ export default function HospitalityPage() {
               <p className="text-grey leading-relaxed mb-6">
                 Full venue fitout for one of regional Victoria's landmark hospitality destinations. We delivered
                 front-of-house design, commercial kitchen build, bar service areas, acoustic treatment
-                and all compliance works — on programme, to the operator's exact brief.
+                and all compliance works - on programme, to the operator's exact brief.
               </p>
               <p className="text-xs tracking-[0.2em] uppercase text-grey/60">Yarrawonga, VIC</p>
             </div>
@@ -194,7 +194,7 @@ export default function HospitalityPage() {
               Tell us about your venue.
             </h2>
             <p className="text-ink">
-              We respond within one business day. Licensed nationally — Cm3 certified.
+              We respond within one business day. Licensed nationally - Cm3 certified.
             </p>
           </div>
           <EnquiryForm enquiryType="Hospitality" />

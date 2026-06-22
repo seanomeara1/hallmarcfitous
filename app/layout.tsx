@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 
 const TITLE = "Retail, Commercial & Hospitality Fitouts | Hallmarc National Fitouts";
 const DESC =
-  "Turnkey retail, commercial and hospitality fitouts — senior-led, with joinery at our core and licensed across Australia. Spaces built to be remembered.";
+  "Turnkey retail, commercial and hospitality fitouts - senior-led, with joinery at our core and licensed across Australia. Spaces built to be remembered.";
 
 export const metadata: Metadata = {
   title: {

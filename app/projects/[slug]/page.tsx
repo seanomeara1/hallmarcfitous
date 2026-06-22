@@ -16,7 +16,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const p = getProject(slug);
   if (!p) return {};
-  const title = `${p.title} — ${p.vertical} Fitout`;
+  const title = `${p.title} - ${p.vertical} Fitout`;
   return {
     title,
     description: p.summary,
@@ -113,7 +113,7 @@ export default async function ProjectPage({
               <div key={i} className="relative aspect-[4/3] overflow-hidden rounded-sm bg-cream3">
                 <Image
                   src={src}
-                  alt={`${p.title} — image ${i + 2}`}
+                  alt={`${p.title} - image ${i + 2}`}
                   fill
                   sizes="(max-width: 640px) 100vw, 50vw"
                   className="object-cover"

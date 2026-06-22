@@ -8,7 +8,7 @@ import EnquiryForm from "@/components/EnquiryForm";
 export const metadata: Metadata = {
   title: "Retail Fitouts",
   description:
-    "Retail fitouts that deliver on brand — flagship stores, national rollout programs and brand-compliant fitouts. Licensed across Australia.",
+    "Retail fitouts that deliver on brand - flagship stores, national rollout programs and brand-compliant fitouts. Licensed across Australia.",
   alternates: { canonical: "/retail" },
 };
 
@@ -21,7 +21,7 @@ const PROJECTS = [
 const CAPABILITIES = [
   {
     title: "Flagship stores",
-    body: "Single-site flagship fitouts built to brand spec — premium joinery, quality finishes and no substitutions without your sign-off.",
+    body: "Single-site flagship fitouts built to brand spec - premium joinery, quality finishes and no substitutions without your sign-off.",
   },
   {
     title: "Multi-site rollouts",
@@ -29,7 +29,7 @@ const CAPABILITIES = [
   },
   {
     title: "Brand compliance",
-    body: "We work directly from your brand guidelines and head office specs. Senior PM oversight on every site — not subcontracted or outsourced.",
+    body: "We work directly from your brand guidelines and head office specs. Senior PM oversight on every site - not subcontracted or outsourced.",
   },
 ];
 
@@ -44,10 +44,10 @@ export default function RetailPage() {
       {/* Hero */}
       <HeroSection
         imageSrc="/images/stylerunner_hero.jpg"
-        imageAlt="Stylerunner retail fitout — Hallmarc"
+        imageAlt="Stylerunner retail fitout - Hallmarc"
         eyebrow="Retail"
         headline="Retail fitouts that deliver on brand."
-        subline="From flagship stores to national rollout programs — on spec, on time, every site."
+        subline="From flagship stores to national rollout programs - on spec, on time, every site."
         primaryCTA={{ label: "Start your project", href: "#enquire" }}
         overlayOpacity={35}
       />
@@ -68,7 +68,7 @@ export default function RetailPage() {
                 Built to your spec. Delivered nationally.
               </h2>
               <p className="text-ink leading-relaxed">
-                From concept through to completion, we manage every aspect of your retail fitout —
+                From concept through to completion, we manage every aspect of your retail fitout - 
                 design coordination, procurement, shopfitting, joinery, signage and compliance.
                 Joinery is our heritage: manufactured in-house where it's economically suitable and
                 backed by a vetted national network of cabinet makers, giving us the quality control
@@ -129,7 +129,7 @@ export default function RetailPage() {
             >
               Tell us about your store.
             </h2>
-            <p className="text-ink">Single site or national rollout — we'd love to hear about it.</p>
+            <p className="text-ink">Single site or national rollout - we'd love to hear about it.</p>
           </div>
           <EnquiryForm enquiryType="Retail" />
         </div>

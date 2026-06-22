@@ -11,11 +11,11 @@ interface Slide {
 }
 
 const SLIDES: Slide[] = [
-  { src: "/images/zambrero-drivethrough.jpg", alt: "Zambrero drive-through fitout",     caption: "Zambrero Drive-Through — QSR" },
-  { src: "/images/terminus.jpg",            alt: "The Terminus Hotel fitout",          caption: "The Terminus Hotel — Yarrawonga, VIC" },
-  { src: "/images/stylerunner_hero.jpg",    alt: "Stylerunner retail fitout",          caption: "Stylerunner — Retail" },
-  { src: "/images/commercial1.jpg",         alt: "DISSH Head Office commercial fitout", caption: "DISSH Head Office — Commercial" },
-  { src: "/images/xo1.jpg",                 alt: "X&O retail fitout",                  caption: "X&O — Retail" },
+  { src: "/images/zambrero-drivethrough.jpg", alt: "Zambrero drive-through fitout",     caption: "Zambrero Drive-Through - QSR" },
+  { src: "/images/terminus.jpg",            alt: "The Terminus Hotel fitout",          caption: "The Terminus Hotel - Yarrawonga, VIC" },
+  { src: "/images/stylerunner_hero.jpg",    alt: "Stylerunner retail fitout",          caption: "Stylerunner - Retail" },
+  { src: "/images/commercial1.jpg",         alt: "DISSH Head Office commercial fitout", caption: "DISSH Head Office - Commercial" },
+  { src: "/images/xo1.jpg",                 alt: "X&O retail fitout",                  caption: "X&O - Retail" },
   { src: "/images/hero2.jpg",               alt: "Hallmarc in-house joinery factory",  caption: "In-house joinery manufacturing" },
 ];
 
@@ -31,7 +31,7 @@ export default function HeroCarousel() {
   const prev = useCallback(() => setCurrent((c) => (c - 1 + SLIDES.length) % SLIDES.length), []);
 
   // Auto-advance. Keyed on `current` so the timer restarts after any manual
-  // change (tap/swipe/dot) — and uses a functional update so it never stalls.
+  // change (tap/swipe/dot) - and uses a functional update so it never stalls.
   // Skipped for visitors who prefer reduced motion.
   useEffect(() => {
     if (typeof window !== "undefined" &&
@@ -90,7 +90,7 @@ export default function HeroCarousel() {
         </div>
       ))}
 
-      {/* Content — sits above all slides */}
+      {/* Content - sits above all slides */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full py-24 flex flex-col gap-6">
         <h1
           className="text-white text-4xl sm:text-5xl lg:text-[3.5rem] font-bold tracking-tight max-w-3xl leading-tight"
@@ -99,7 +99,7 @@ export default function HeroCarousel() {
           Spaces built to be remembered.
         </h1>
         <p className="text-white/75 text-lg lg:text-xl max-w-xl leading-relaxed">
-          National fitouts for retail, commercial and hospitality — concept to completion.
+          National fitouts for retail, commercial and hospitality - concept to completion.
         </p>
         <div className="flex flex-wrap gap-4 mt-2">
           <Link

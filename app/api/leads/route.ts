@@ -75,7 +75,7 @@ async function upsertAttioContact(lead: LeadPayload) {
         data: {
           parent_object: "people",
           parent_record_id: recordId,
-          title: `Website enquiry — ${lead.enquiryType}`,
+          title: `Website enquiry - ${lead.enquiryType}`,
           format: "plaintext",
           content: noteBody,
         },
@@ -88,7 +88,7 @@ async function upsertAttioContact(lead: LeadPayload) {
 
 async function sendEmails(lead: LeadPayload) {
   const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey) return; // soft fail — don't block response
+  if (!apiKey) return; // soft fail - don't block response
 
   const to = (process.env.NOTIFICATION_EMAIL_TO ?? "marcus@hallmarcfitouts.com.au").split(",");
   const from = process.env.NOTIFICATION_EMAIL_FROM ?? "noreply@hallmarcfitouts.com.au";
@@ -100,11 +100,11 @@ async function sendEmails(lead: LeadPayload) {
     body: JSON.stringify({
       from,
       to,
-      subject: `New ${lead.enquiryType} enquiry — ${lead.firstName} ${lead.lastName ?? ""}`.trim(),
+      subject: `New ${lead.enquiryType} enquiry - ${lead.firstName} ${lead.lastName ?? ""}`.trim(),
       html: `
         <p><strong>Name:</strong> ${lead.firstName} ${lead.lastName ?? ""}</p>
         <p><strong>Email:</strong> ${lead.email}</p>
-        <p><strong>Phone:</strong> ${lead.phone ?? "—"}</p>
+        <p><strong>Phone:</strong> ${lead.phone ?? " - "}</p>
         <p><strong>Enquiry type:</strong> ${lead.enquiryType}</p>
         <p><strong>Source:</strong> ${lead.source}</p>
         ${lead.projectDescription ? `<p><strong>Project details:</strong><br>${lead.projectDescription.replace(/\n/g, "<br>")}</p>` : ""}
@@ -120,12 +120,12 @@ async function sendEmails(lead: LeadPayload) {
     body: JSON.stringify({
       from,
       to: [lead.email],
-      subject: "Thanks for reaching out — Hallmarc National Fitouts",
+      subject: "Thanks for reaching out - Hallmarc National Fitouts",
       html: `
         <p>Hi ${lead.firstName},</p>
         <p>Thanks for getting in touch. We've received your enquiry and a member of our team will be in touch within one business day.</p>
         <p>In the meantime, you can reach us directly at <a href="mailto:hello@hallmarcfitouts.com.au">hello@hallmarcfitouts.com.au</a>.</p>
-        <p>— The Hallmarc team</p>
+        <p> - The Hallmarc team</p>
         <p style="color:#888;font-size:12px;">Hallmarc National Fitouts · hallmarcfitouts.com.au<br>Licensed in VIC, QLD, SA, ACT and WA.</p>
       `,
     }),

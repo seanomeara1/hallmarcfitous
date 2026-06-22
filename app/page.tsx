@@ -21,12 +21,12 @@ const FEATURED_PROJECTS = [
 const VERTICALS = [
   {
     title: "Retail",
-    description: "Flagship stores, national rollout programs and brand-compliant fitouts — delivered on time and on spec.",
+    description: "Flagship stores, national rollout programs and brand-compliant fitouts - delivered on time and on spec.",
     href: "/retail",
   },
   {
     title: "Commercial",
-    description: "Corporate workplaces, developer display suites, health, education and government — concept to completion.",
+    description: "Corporate workplaces, developer display suites, health, education and government - concept to completion.",
     href: "/commercial",
   },
   {
@@ -40,15 +40,15 @@ const VERTICALS = [
 const DIFFERENTIATORS = [
   {
     title: "Joinery at our core",
-    body: "Joinery is where we started. We manufacture in-house where it's economically suitable, backed by a vetted national network of 1,500+ suppliers and trades — premium product under one roof, at any scale.",
+    body: "Joinery is where we started. We manufacture in-house where it's economically suitable, backed by a vetted national network of 1,500+ suppliers and trades - premium product under one roof, at any scale.",
   },
   {
     title: "Senior-led delivery",
-    body: "Your project is managed by a senior team member from brief through to handover — never handed off to juniors.",
+    body: "Your project is managed by a senior team member from brief through to handover - never handed off to juniors.",
   },
   {
     title: "Concept to completion",
-    body: "Design coordination, procurement, trades, compliance, certification and handover — one team, one responsibility.",
+    body: "Design coordination, procurement, trades, compliance, certification and handover - one team, one responsibility.",
   },
 ];
 
