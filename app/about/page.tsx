@@ -93,7 +93,7 @@ export default function AboutPage() {
             <p>
               We&rsquo;re Cm3 certified and proud of a spotless safety record — zero site safety
               incidents across nine years of operation — and our work has been recognised at the
-              Interior Fitout Awards, including the 2025 award for Best Retail Interior Fitout.
+              Interior Fitout Awards, including the 2025 award for Best Fitout under $500,000.
             </p>
           </div>
         </div>

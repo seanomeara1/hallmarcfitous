@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import HeroSection from "@/components/HeroSection";
 import SectionLabel from "@/components/SectionLabel";
 import TechTag from "@/components/TechTag";
@@ -7,16 +8,17 @@ import ProjectGrid from "@/components/ProjectGrid";
 import EnquiryForm from "@/components/EnquiryForm";
 
 export const metadata: Metadata = {
-  title: "Hospitality Fitouts",
+  title: "Hospitality & Drive-Through Fitouts",
   description:
-    "Front-of-house design and back-of-house engineering for restaurants, pubs, hotels and QSR. Licensed across Australia.",
+    "Front-of-house design and back-of-house engineering for restaurants, pubs, hotels and drive-through QSR. Drive-through specialists, licensed across Australia.",
   alternates: { canonical: "/hospitality" },
 };
 
 const TECH_TAGS = [
-  "Commercial kitchens", "3-phase power", "Grease traps",
-  "Exhausts & ventilation", "Hydraulics", "Drainage & waste",
-  "Fire suppression", "Cool rooms", "Pass-through windows",
+  "Drive-through canopies", "Digital menu boards", "Commercial kitchens",
+  "3-phase power", "Grease traps", "Exhausts & ventilation",
+  "Hydraulics", "Drainage & waste", "Fire suppression",
+  "Cool rooms", "Pass-through windows",
 ];
 
 const CLIENTS = [
@@ -55,9 +57,10 @@ export default function HospitalityPage() {
               From licensed venues to national QSR programs.
             </h2>
             <p className="text-ink leading-relaxed">
-              We deliver full fitouts for restaurants, pubs, bars, hotels, cafes and quick-service restaurants
-              across Australia. Whether it's a single flagship venue or a multi-site rollout, our team manages
-              every trade from DA approval through to handover.
+              We deliver full fitouts for restaurants, pubs, bars, hotels, cafes and quick-service
+              restaurants across Australia — including drive-through QSR programs from canopy and
+              menu boards to the kitchen behind them. Whether it's a single flagship venue or a
+              national multi-site rollout, our team manages every trade from DA approval through to handover.
             </p>
           </div>
 
@@ -96,6 +99,47 @@ export default function HospitalityPage() {
             In-house capability across commercial kitchen design, extraction, hydraulics and 3-phase electrical
             means no coordination gaps — and a single point of contact from concept through to handover.
           </p>
+        </div>
+      </section>
+
+      {/* Drive-through QSR — key selling point */}
+      <section className="bg-cream py-20 lg:py-28">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-sm order-1 lg:order-none">
+              <Image
+                src="/images/zambrero-drivethrough.jpg"
+                alt="Zambrero drive-through fitout — canopy, digital menu boards and order lane, Deception Bay"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+              />
+            </div>
+            <div>
+              <SectionLabel>Drive-through QSR</SectionLabel>
+              <h2
+                className="text-3xl lg:text-4xl font-bold mt-4 mb-6 text-black"
+                style={{ fontFamily: "GT Eesti Display, Arial Black, sans-serif" }}
+              >
+                Drive-through specialists.
+              </h2>
+              <p className="text-ink leading-relaxed mb-4">
+                Drive-through is one of our core strengths. We deliver complete QSR sites — canopies
+                and order lanes, digital menu boards, the commercial kitchen behind them and every
+                trade in between — built to brand standard and tuned for speed of service.
+              </p>
+              <p className="text-ink leading-relaxed mb-6">
+                We work to tight, fast-tracked programs across national rollouts, with in-house
+                joinery and a senior PM on every site from DA approval through to opening day.
+              </p>
+              <Link
+                href="/projects/zambrero"
+                className="inline-flex items-center gap-2 text-terra text-sm font-medium hover:gap-3 transition-all"
+              >
+                See the Zambrero drive-through →
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 

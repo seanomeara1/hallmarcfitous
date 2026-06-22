@@ -18,7 +18,7 @@ export default function AwardsBanner() {
           <path d="M17 4h3v2a3 3 0 0 1-3 3M7 4H4v2a3 3 0 0 0 3 3" />
         </svg>
         <p className="text-white text-sm lg:text-base font-medium tracking-wide">
-          Winner — Best Retail Interior Fitout (up to $250k), 2025 Interior Fitout Awards — Sweet As, Chadstone
+          Winner — Best Fitout under $500,000, 2025 Interior Fitout Awards — Sweet As, Chadstone
         </p>
       </div>
     </section>

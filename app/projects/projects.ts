@@ -93,6 +93,7 @@ export const PROJECTS: Project[] = [
     solution: "Since installing our first Zambrero site in 2021, our senior team has provided a level of calmness and concise communication to navigate the high-pressure rollout schedule.",
     outcome: "Hallmarc is recognised as a standout in the pack for attention to detail and top-tier finishes that drive brand growth.",
     images: [
+      "/images/zambrero-drivethrough.jpg",
       "https://res.cloudinary.com/dp77cjpmn/image/upload/f_auto,q_auto/v1/hallmarc/projects/3f66daeffd0771c4?_a=BAMAPqa80",
       "https://res.cloudinary.com/dp77cjpmn/image/upload/f_auto,q_auto/v1/hallmarc/projects/6b0ed27703ae984a?_a=BAMAPqa80",
       "https://res.cloudinary.com/dp77cjpmn/image/upload/f_auto,q_auto/v1/hallmarc/projects/c7cb6d41cd74785c?_a=BAMAPqa80",
