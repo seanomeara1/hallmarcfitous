@@ -173,6 +173,44 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Strategic Partnerships & Operations - Sean O'Meara */}
+      <section className="bg-cream2 py-20 lg:py-28">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Photo — TODO: replace monogram with <Image src="/images/team/sean.jpg" .../> when a headshot is supplied */}
+          <div className="order-1 lg:order-2 relative aspect-[4/5] w-full max-w-md mx-auto lg:mx-0 rounded-sm overflow-hidden bg-cream3 flex items-center justify-center">
+            <span
+              className="text-7xl font-bold text-terra/30"
+              style={{ fontFamily: "GT Eesti Display, Arial Black, sans-serif" }}
+            >
+              SO
+            </span>
+          </div>
+          <div className="order-2 lg:order-1">
+            <SectionLabel>Leadership</SectionLabel>
+            <h2
+              className="text-3xl lg:text-4xl font-bold mt-4 mb-1 text-black"
+              style={{ fontFamily: "GT Eesti Display, Arial Black, sans-serif" }}
+            >
+              Sean O&rsquo;Meara
+            </h2>
+            <p className="text-terra text-xs tracking-[0.15em] uppercase mb-6">
+              Strategic Partnerships &amp; Operations
+            </p>
+            <div className="space-y-5 text-ink text-base lg:text-lg leading-relaxed">
+              <p>
+                Sean brings more than 22 years in company operations across hospitality software and
+                development, with implementations spanning 3,700 venues across Australia and New Zealand.
+              </p>
+              <p>
+                Having advised, owned and operated venues himself, he leads strategy, partnerships,
+                operations and systems at Hallmarc - connecting what operators need on the ground with
+                how Hallmarc delivers it.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Team */}
       <section className="bg-cream py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">

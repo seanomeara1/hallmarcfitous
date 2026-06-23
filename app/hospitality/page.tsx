@@ -78,6 +78,30 @@ export default function HospitalityPage() {
         </div>
       </section>
 
+      {/* Hospitality, from the inside - Sean O'Meara perspective */}
+      <section className="bg-terra py-16 lg:py-20">
+        <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+          <p className="text-white/70 text-xs tracking-[0.25em] uppercase mb-6">
+            Hospitality, from the inside
+          </p>
+          <blockquote
+            className="text-white text-2xl lg:text-3xl font-bold leading-snug"
+            style={{ fontFamily: "GT Eesti Display, Arial Black, sans-serif" }}
+          >
+            &ldquo;Having worked with operators across 3,700 venues, I know what it takes to make a
+            space perform from day one. Hallmarc has the experience, the team and the can-do attitude
+            operators want in a fitout partner - and knows how to deliver it.&rdquo;
+          </blockquote>
+          <p className="text-white text-sm mt-7 font-medium">
+            Sean O&rsquo;Meara{" "}
+            <span className="text-white/70 font-normal">- Strategic Partnerships &amp; Operations</span>
+          </p>
+          <p className="text-white/70 text-xs mt-1">
+            22+ years in hospitality · 3,700 venues across Australia &amp; New Zealand
+          </p>
+        </div>
+      </section>
+
       {/* Technical expertise band */}
       <section className="bg-dark py-16">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
