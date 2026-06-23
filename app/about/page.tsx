@@ -176,14 +176,14 @@ export default function AboutPage() {
       {/* Strategic Partnerships & Operations - Sean O'Meara */}
       <section className="bg-cream2 py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Photo — TODO: replace monogram with <Image src="/images/team/sean.jpg" .../> when a headshot is supplied */}
-          <div className="order-1 lg:order-2 relative aspect-[4/5] w-full max-w-md mx-auto lg:mx-0 rounded-sm overflow-hidden bg-cream3 flex items-center justify-center">
-            <span
-              className="text-7xl font-bold text-terra/30"
-              style={{ fontFamily: "GT Eesti Display, Arial Black, sans-serif" }}
-            >
-              SO
-            </span>
+          <div className="order-1 lg:order-2 relative aspect-[4/5] w-full max-w-md mx-auto lg:mx-0 rounded-sm overflow-hidden bg-cream3">
+            <Image
+              src="/images/team/sean.jpg"
+              alt="Sean O'Meara - Strategic Partnerships & Operations"
+              fill
+              className="object-cover object-top"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
           </div>
           <div className="order-2 lg:order-1">
             <SectionLabel>Leadership</SectionLabel>
