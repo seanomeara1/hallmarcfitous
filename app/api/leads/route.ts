@@ -51,12 +51,25 @@ async function upsertAttioContact(lead: LeadPayload) {
   if (!apiKey) throw new Error("ATTIO_API_KEY not set");
 
   const fullName = `${lead.firstName ?? ""} ${lead.lastName ?? ""}`.trim();
+
+  // Map lowercase source to the Attio "Lead Source" select option titles.
+  const sourceLabels: Record<LeadPayload["source"], string> = {
+    website: "Website",
+    popup: "Popup",
+    meta: "Meta",
+    linkedin: "LinkedIn",
+  };
+
   const attributes: Record<string, unknown> = {
     email_addresses: [lead.email],
     ...(fullName && {
       name: [{ first_name: lead.firstName ?? "", last_name: lead.lastName ?? "", full_name: fullName }],
     }),
     ...(lead.phone && { phone_numbers: [normalizeAuPhone(lead.phone)] }),
+    // Structured fields so leads are filterable in Attio (not just in note bodies).
+    enquiry_type: lead.enquiryType,
+    lead_source: sourceLabels[lead.source] ?? "Other",
+    callback_requested: lead.callbackRequested ?? false,
   };
 
   // Upsert person record (matched on email).
@@ -123,7 +136,10 @@ async function sendEmails(lead: LeadPayload) {
   // Popup email-only captures don't trigger the full email flow until they're a real enquiry.
   if (lead.source === "popup" && !lead.callbackRequested) return;
 
-  const to = (process.env.NOTIFICATION_EMAIL_TO ?? "marcus@hallmarcfitouts.com.au").split(",");
+  const to = (process.env.NOTIFICATION_EMAIL_TO ?? "marcus@hallmarcfitouts.com.au,sean@omearagroup.com")
+    .split(",")
+    .map((addr) => addr.trim())
+    .filter(Boolean);
   const from = process.env.NOTIFICATION_EMAIL_FROM ?? "noreply@hallmarcfitouts.com.au";
   const name = `${lead.firstName ?? ""} ${lead.lastName ?? ""}`.trim();
   const greeting = lead.firstName ? lead.firstName : "there";

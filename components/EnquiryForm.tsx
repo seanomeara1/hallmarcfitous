@@ -93,9 +93,16 @@ export default function EnquiryForm({ enquiryType }: EnquiryFormProps) {
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="w-full bg-terra text-white font-medium text-sm py-4 rounded-sm hover:bg-terra/90 transition-colors disabled:opacity-60 tracking-wide"
+        className="w-full bg-terra text-white font-bold text-base py-4 rounded-sm shadow-sm hover:bg-terra/90 hover:shadow-md active:scale-[0.99] transition-all disabled:opacity-60 tracking-wide flex items-center justify-center gap-2"
       >
-        {status === "submitting" ? "Sending..." : "Start your project"}
+        {status === "submitting" ? (
+          "Sending..."
+        ) : (
+          <>
+            Send enquiry
+            <span aria-hidden="true" className="text-lg leading-none">&rarr;</span>
+          </>
+        )}
       </button>
     </form>
   );
