@@ -15,6 +15,21 @@ const nextConfig: NextConfig = {
       { source: "/contact-us", destination: "/#enquire", permanent: true },
       { source: "/services", destination: "/", permanent: true },
       { source: "/work-with-hallmarc", destination: "/partners", permanent: true },
+
+      // Old brand domain → canonical host (permanent 301, not 302 — preserves ranking authority).
+      // Requires hallmarcnp.com.au + www to be added as domains on this Vercel project.
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "hallmarcnp.com.au" }],
+        destination: "https://www.hallmarcfitouts.com.au/:path*",
+        permanent: true,
+      },
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.hallmarcnp.com.au" }],
+        destination: "https://www.hallmarcfitouts.com.au/:path*",
+        permanent: true,
+      },
     ];
   },
 };
