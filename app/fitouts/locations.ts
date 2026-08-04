@@ -30,8 +30,6 @@ export interface Location {
 
 const COVERAGE_LICENSED =
   "We hold building licences across VIC, QLD, SA, ACT and WA and deliver nationally, senior-managed from a single point of contact.";
-const COVERAGE_SERVICED =
-  "We deliver here through our national delivery model, senior-managed from a single point of contact, with licensed trades coordinated on the ground.";
 
 export const LOCATIONS: Location[] = [
   {
@@ -101,7 +99,7 @@ export const LOCATIONS: Location[] = [
     slug: "sydney",
     city: "Sydney",
     state: "NSW",
-    licensed: false,
+    licensed: true,
     heroImage: "/images/stylerunner_hero.jpg",
     heroAlt: "Hallmarc retail fitout, Stylerunner, New South Wales",
     title: "Retail, Commercial & Hospitality Fitouts Sydney | Hallmarc National Fitouts",
@@ -110,7 +108,7 @@ export const LOCATIONS: Location[] = [
     h1: "Fitouts in Sydney",
     intro: [
       "We deliver retail, commercial and hospitality fitouts across Sydney and New South Wales, from single flagship stores to national rollout programs run out of NSW. Our clients here include Stylerunner, City Beach, RSL NSW and TAB.",
-      "Distance is never an excuse for a junior on site. Every NSW project is led by a senior project manager as your single point of contact, backed by in-house joinery. " + COVERAGE_SERVICED,
+      "Distance is never an excuse for a junior on site. We are licensed to build in New South Wales, and every project is led by a senior project manager as your single point of contact, backed by in-house joinery. " + COVERAGE_LICENSED,
     ],
     verticals: [
       { title: "Retail", body: "Flagship stores and multi-site retail rollouts across Sydney and regional NSW, including work for Stylerunner and City Beach." },
@@ -122,7 +120,7 @@ export const LOCATIONS: Location[] = [
       { slug: "city-beach", title: "City Beach", where: "Ballina, NSW", blurb: "Retail store fitout." },
     ],
     faqs: [
-      { q: "Do you deliver fitouts in Sydney if you're based in Queensland?", a: "Yes. National delivery is core to how we work. NSW projects are senior-managed from a single point of contact with licensed trades coordinated on the ground, and we already deliver for clients like Stylerunner, City Beach, RSL NSW and TAB." },
+      { q: "Are you licensed to build in New South Wales?", a: "Yes. We are licensed in NSW and deliver Sydney and regional NSW projects senior-managed from a single point of contact, backed by in-house joinery. We already deliver for clients like Stylerunner, City Beach, RSL NSW and TAB." },
       { q: "What does a fitout cost in Sydney?", a: "We scope and quote every project rather than publishing a rate, because fitouts are bespoke. Cost is driven by size, finishes, services, site access and building requirements. You get a detailed quote after we understand the brief." },
       { q: "Can you run a national rollout from Sydney?", a: "Yes. Multi-site and national rollouts are a core capability. In-house joinery and one accountable team keep brand delivery consistent across every site and state." },
       { q: "Do you deliver club and pub fitouts in NSW?", a: "Yes. We have deep hospitality experience including RSL NSW and TAB, covering front-of-house and complex back-of-house." },
@@ -224,7 +222,7 @@ export const LOCATIONS: Location[] = [
     slug: "darwin",
     city: "Darwin",
     state: "NT",
-    licensed: false,
+    licensed: true,
     heroImage: "/images/zambrero.jpg",
     heroAlt: "Hallmarc hospitality fitout, Northern Territory",
     title: "Retail, Commercial & Hospitality Fitouts Darwin | Hallmarc National Fitouts",
@@ -233,7 +231,7 @@ export const LOCATIONS: Location[] = [
     h1: "Fitouts in Darwin",
     intro: [
       "We deliver retail, commercial and hospitality fitouts in Darwin and the Northern Territory through our national delivery model. Remote and regional delivery is something we plan for: senior-led management, in-house joinery and coordinated local trades keep quality and programme on track.",
-      "One accountable point of contact runs the project from concept to completion, so a Darwin site is managed with the same rigour as one on our doorstep. " + COVERAGE_SERVICED,
+      "We are licensed to build in the Northern Territory, and one accountable point of contact runs the project from concept to completion, so a Darwin site is managed with the same rigour as one on our doorstep. " + COVERAGE_LICENSED,
     ],
     verticals: [
       { title: "Retail", body: "Flagship stores and national brand rollouts delivered to Darwin on brand spec, with joinery manufactured in-house." },
@@ -245,7 +243,7 @@ export const LOCATIONS: Location[] = [
       { slug: "zambrero", title: "Zambrero", where: "QSR", blurb: "Hospitality QSR delivery with full back-of-house." },
     ],
     faqs: [
-      { q: "Do you deliver fitouts in Darwin?", a: "Yes. We deliver Darwin and Northern Territory projects through our national delivery model, senior-managed from a single point of contact with local trades coordinated on the ground." },
+      { q: "Are you licensed to build in the Northern Territory?", a: "Yes. We are licensed in the NT and deliver Darwin and Northern Territory projects senior-managed from a single point of contact, backed by in-house joinery and coordinated local trades." },
       { q: "How do you manage remote delivery to the NT?", a: "We plan logistics, procurement and programme up front, manufacture joinery in-house for consistency, and keep one senior PM accountable end to end so remote sites don't mean reduced oversight." },
       { q: "What does a fitout cost in Darwin?", a: "We scope and quote each project rather than publishing rates. Cost depends on size, finishes, services, logistics, site access and building requirements. You get a detailed quote after we understand the brief." },
       { q: "Can you deliver hospitality back-of-house in Darwin?", a: "Yes. We deliver full back-of-house including commercial kitchens, 3-phase power, exhaust and hydraulics as part of end-to-end hospitality delivery." },
