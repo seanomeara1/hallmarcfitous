@@ -6,12 +6,54 @@ import SectionLabel from "@/components/SectionLabel";
 import TechTag from "@/components/TechTag";
 import ProjectGrid from "@/components/ProjectGrid";
 import EnquiryForm from "@/components/EnquiryForm";
+import FAQ, { type FaqItem } from "@/components/FAQ";
+import { LOCATIONS } from "@/app/fitouts/locations";
 
 export const metadata: Metadata = {
-  title: "Hospitality & Drive-Through Fitouts",
+  title: "Hospitality & Restaurant Fitouts: QSR, Pub, Cafe & Hotel",
   description:
-    "Front-of-house design and back-of-house engineering for restaurants, pubs, hotels and drive-through QSR. Drive-through specialists, licensed across Australia.",
+    "Restaurant, pub, bar, hotel, cafe and drive-through QSR fitouts. Front-of-house design and full back-of-house engineering, including commercial kitchens. Licensed across Australia.",
   alternates: { canonical: "/hospitality" },
+};
+
+const HOSPITALITY_FAQS: FaqItem[] = [
+  {
+    q: "How much does a hospitality fitout cost?",
+    a: "Every venue is bespoke, so we scope and quote each project rather than publishing a rate. Cost is driven heavily by back-of-house, commercial kitchens, 3-phase power, exhaust, hydraulics and grease traps all add up, along with finishes, site access and compliance. After understanding your operation we provide a detailed, itemised quote.",
+  },
+  {
+    q: "Do you build commercial kitchens and back-of-house?",
+    a: "Yes. Back-of-house is our technical strength. We coordinate commercial kitchen design, extraction and exhaust, 3-phase electrical, hydraulics, grease traps, cool rooms and fire suppression, and own the quality control and programme across every trade.",
+  },
+  {
+    q: "Do you deliver drive-through QSR sites?",
+    a: "Yes, drive-through is a core strength. We deliver complete QSR sites, canopies and order lanes, digital menu boards and the commercial kitchen behind them, built to brand standard and tuned for speed of service across national rollouts.",
+  },
+  {
+    q: "Can you deliver a national hospitality or QSR rollout?",
+    a: "Yes. With in-house joinery and one accountable team, we deliver consistent multi-site hospitality and QSR programs to a fast-tracked schedule, with a senior PM on every site from approval to opening day.",
+  },
+  {
+    q: "Where do you deliver hospitality fitouts?",
+    a: "We deliver nationally, including Gold Coast, Brisbane, Sydney, Melbourne, Adelaide, Perth and Darwin, and hold building licences across VIC, QLD, SA, ACT and WA.",
+  },
+];
+
+const serviceLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  serviceType: "Hospitality fitouts",
+  name: "Hospitality fitouts",
+  description:
+    "Restaurants, pubs, bars, hotels, cafes and drive-through QSR, with front-of-house design and full back-of-house engineering including commercial kitchens, delivered nationally.",
+  url: "https://www.hallmarcfitouts.com.au/hospitality",
+  areaServed: "AU",
+  provider: {
+    "@type": "GeneralContractor",
+    name: "Hallmarc National Fitouts",
+    url: "https://www.hallmarcfitouts.com.au",
+    telephone: "+61755715551",
+  },
 };
 
 const TECH_TAGS = [
@@ -205,6 +247,24 @@ export default function HospitalityPage() {
       <section className="bg-cream pt-0">
         <ProjectGrid projects={PROJECTS} cols={2} />
       </section>
+
+      {/* Hospitality fitouts by location */}
+      <section className="bg-cream py-14">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <p className="text-xs tracking-[0.25em] uppercase text-grey mb-4">Hospitality fitouts by location</p>
+          <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
+            {LOCATIONS.map((l) => (
+              <Link key={l.slug} href={`/fitouts/${l.slug}`} className="text-terra font-medium hover:underline">
+                {`Hospitality fitouts ${l.city} →`}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <FAQ items={HOSPITALITY_FAQS} heading="Hospitality fitouts — FAQs" />
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceLd) }} />
 
       {/* Enquiry CTA + form */}
       <section id="enquire" className="bg-cream2 py-20 lg:py-28">

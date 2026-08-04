@@ -7,6 +7,7 @@ import VerticalCard from "@/components/VerticalCard";
 import SectionLabel from "@/components/SectionLabel";
 import EnquiryForm from "@/components/EnquiryForm";
 import AwardsBanner from "@/components/AwardsBanner";
+import { LOCATIONS } from "@/app/fitouts/locations";
 
 export const metadata: Metadata = {
   title: { absolute: "Retail, Commercial & Hospitality Fitouts | Hallmarc National Fitouts" },
@@ -93,7 +94,7 @@ export default function HomePage() {
             className="text-3xl lg:text-4xl font-bold mt-4 text-white"
             style={{ fontFamily: "GT Eesti Display, Arial Black, sans-serif" }}
           >
-            Three verticals. One standard.
+            Retail, commercial and hospitality fitouts, delivered nationally.
           </h2>
         </div>
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -147,6 +148,21 @@ export default function HomePage() {
               {name}
             </span>
           ))}
+        </div>
+      </section>
+
+      {/* 6b. Fitouts across Australia */}
+      <section className="bg-cream py-14">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <p className="text-xs tracking-[0.25em] uppercase text-grey mb-4 text-center">Fitouts across Australia</p>
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
+            {LOCATIONS.map((l) => (
+              <Link key={l.slug} href={`/fitouts/${l.slug}`} className="text-terra font-medium hover:underline">
+                {`${l.city} →`}
+              </Link>
+            ))}
+            <Link href="/national-rollout" className="text-terra font-medium hover:underline">National rollouts →</Link>
+          </div>
         </div>
       </section>
 

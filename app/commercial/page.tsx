@@ -1,15 +1,58 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import HeroSection from "@/components/HeroSection";
 import SectionLabel from "@/components/SectionLabel";
 import ProjectGrid from "@/components/ProjectGrid";
 import EnquiryForm from "@/components/EnquiryForm";
+import FAQ, { type FaqItem } from "@/components/FAQ";
+import { LOCATIONS } from "@/app/fitouts/locations";
 
 export const metadata: Metadata = {
-  title: "Commercial Fitouts",
+  title: "Commercial & Office Fitouts Across Australia",
   description:
-    "Commercial fitouts built to impress - corporate workplaces, developer display suites, health, education and government. Licensed across Australia.",
+    "Commercial and office fitouts - corporate workplaces, developer display suites, base-building, health, education and government. In-house joinery, senior-led. Licensed across Australia.",
   alternates: { canonical: "/commercial" },
+};
+
+const COMMERCIAL_FAQS: FaqItem[] = [
+  {
+    q: "How much does a commercial fitout cost?",
+    a: "Every commercial fitout is bespoke, so we scope and quote each project rather than publishing a rate. Cost is driven by area, finishes, mechanical and electrical services, base-building works, site access and building requirements. After understanding your brief we provide a detailed, itemised quote.",
+  },
+  {
+    q: "How fast can you deliver a display suite or office fitout?",
+    a: "It depends on scope and approvals, but as a benchmark we delivered the Eveleigh developer display suite in Broadbeach in 4.5 weeks, from bare shell to presentation-ready. We set a realistic programme up front and a senior PM holds it to handover.",
+  },
+  {
+    q: "Which commercial sectors do you deliver?",
+    a: "Corporate workplaces and headquarters, developer display suites, base-building fitouts, health and medical, education, government and civic, and mixed-use developments.",
+  },
+  {
+    q: "Do you handle base-building works and services?",
+    a: "Yes. As part of concept-to-completion delivery we coordinate mechanical, electrical, hydraulic and compliance works, with one senior point of contact accountable across every trade.",
+  },
+  {
+    q: "Where do you deliver commercial fitouts?",
+    a: "We deliver nationally, including Gold Coast, Brisbane, Sydney, Melbourne, Adelaide, Perth and Darwin, and hold building licences across VIC, QLD, SA, ACT and WA.",
+  },
+];
+
+const serviceLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  serviceType: "Commercial and office fitouts",
+  name: "Commercial fitouts",
+  description:
+    "Corporate workplaces, developer display suites, base-building and sector fitouts across health, education, government and mixed-use, delivered nationally with in-house joinery.",
+  url: "https://www.hallmarcfitouts.com.au/commercial",
+  areaServed: "AU",
+  provider: {
+    "@type": "GeneralContractor",
+    name: "Hallmarc National Fitouts",
+    url: "https://www.hallmarcfitouts.com.au",
+    telephone: "+61755715551",
+  },
 };
 
 const SECTORS = [
@@ -113,6 +156,24 @@ export default function CommercialPage() {
       <section>
         <ProjectGrid projects={PROJECTS} cols={3} />
       </section>
+
+      {/* Commercial fitouts by location */}
+      <section className="bg-cream py-14">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <p className="text-xs tracking-[0.25em] uppercase text-grey mb-4">Commercial fitouts by location</p>
+          <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
+            {LOCATIONS.map((l) => (
+              <Link key={l.slug} href={`/fitouts/${l.slug}`} className="text-terra font-medium hover:underline">
+                {`Commercial fitouts ${l.city} →`}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <FAQ items={COMMERCIAL_FAQS} heading="Commercial fitouts — FAQs" />
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceLd) }} />
 
       {/* Enquiry */}
       <section id="enquire" className="bg-cream2 py-20 lg:py-28">
