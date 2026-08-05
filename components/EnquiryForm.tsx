@@ -48,7 +48,15 @@ export default function EnquiryForm({ enquiryType }: EnquiryFormProps) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
       });
-      setStatus(res.ok ? "success" : "error");
+      if (res.ok) {
+        if (typeof window !== "undefined") {
+          const w = window as unknown as { gtag?: (...args: unknown[]) => void };
+          w.gtag?.("event", "generate_lead", { enquiry_type: enquiryType, source: "website" });
+        }
+        setStatus("success");
+      } else {
+        setStatus("error");
+      }
     } catch {
       setStatus("error");
     }
