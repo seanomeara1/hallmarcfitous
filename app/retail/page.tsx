@@ -9,9 +9,9 @@ import FAQ, { type FaqItem } from "@/components/FAQ";
 import { LOCATIONS } from "@/app/fitouts/locations";
 
 export const metadata: Metadata = {
-  title: "Retail Fitouts & Shopfitting Across Australia",
+  title: "Retail Fitouts & Shopfitting",
   description:
-    "Retail fitouts and shopfitting that deliver on brand - flagship stores, national multi-site rollouts and brand-compliant fitouts, with in-house joinery. Licensed across Australia.",
+    "Flagship stores, shopfitting and national multi-site rollouts, brand compliant and senior led, with joinery made in our own workshop.",
   alternates: { canonical: "/retail" },
 };
 

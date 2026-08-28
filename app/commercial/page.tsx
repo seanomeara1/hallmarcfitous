@@ -9,9 +9,9 @@ import FAQ, { type FaqItem } from "@/components/FAQ";
 import { LOCATIONS } from "@/app/fitouts/locations";
 
 export const metadata: Metadata = {
-  title: "Commercial & Office Fitouts Across Australia",
+  title: "Commercial & Office Fitouts",
   description:
-    "Commercial and office fitouts - corporate workplaces, developer display suites, base-building, health, education and government. In-house joinery, senior-led. Licensed across Australia.",
+    "Corporate workplaces, developer display suites, base building, health, education and government fitouts. The Eveleigh delivered in 4.5 weeks.",
   alternates: { canonical: "/commercial" },
 };
 

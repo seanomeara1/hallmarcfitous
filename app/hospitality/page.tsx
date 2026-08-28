@@ -10,9 +10,9 @@ import FAQ, { type FaqItem } from "@/components/FAQ";
 import { LOCATIONS } from "@/app/fitouts/locations";
 
 export const metadata: Metadata = {
-  title: "Hospitality & Restaurant Fitouts: QSR, Pub, Cafe & Hotel",
+  title: "Hospitality & Restaurant Fitouts",
   description:
-    "Restaurant, pub, bar, hotel, cafe and drive-through QSR fitouts. Front-of-house design and full back-of-house engineering, including commercial kitchens. Licensed across Australia.",
+    "Restaurant, pub, bar, hotel, cafe and QSR fitouts with full back of house capability, from commercial kitchens to exhaust and 3-phase power.",
   alternates: { canonical: "/hospitality" },
 };
 

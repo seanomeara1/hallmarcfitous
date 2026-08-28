@@ -7,9 +7,9 @@ import FAQ, { type FaqItem } from "@/components/FAQ";
 import { LOCATIONS } from "@/app/fitouts/locations";
 
 export const metadata: Metadata = {
-  title: "National Fitout Rollouts & Multi-Site Programs",
+  title: "National Fitout Rollouts",
   description:
-    "National retail and hospitality rollout programs delivered from one accountable team, with in-house joinery for consistent brand delivery across every site. Licensed across Australia.",
+    "Multi-site retail and hospitality rollouts run by one senior team, with joinery from our own workshop so site fifty matches site one.",
   alternates: { canonical: "/national-rollout" },
 };
 
